@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Perfume",
+    "image": "/images/categories/perfume.webp",
+    "href": "/category/fragrance"
+  },
+  {
+    "name": "Skincare",
+    "image": "/images/categories/skincare.webp",
+    "href": "/category/skincare"
+  },
+  {
+    "name": "Makeup",
+    "image": "/images/categories/makeup.webp",
+    "href": "/category/makeup"
+  }
+]

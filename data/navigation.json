@@ -1,0 +1,429 @@
+[
+  {
+    "name": "Makeup",
+    "href": "/category/makeup",
+    "isPill": false,
+    "megaMenu": [
+      {
+        "title": "FACE",
+        "links": [
+          {
+            "name": "Face Primer",
+            "href": "/category/face-primer"
+          },
+          {
+            "name": "Concealer",
+            "href": "/category/concealer"
+          },
+          {
+            "name": "Foundation",
+            "href": "/category/foundation"
+          },
+          {
+            "name": "Compact & Pressed Powder",
+            "href": "/category/powder"
+          },
+          {
+            "name": "Contour",
+            "href": "/category/contour"
+          },
+          {
+            "name": "Loose Powder",
+            "href": "/category/loose-powder"
+          }
+        ]
+      },
+      {
+        "title": "EYES",
+        "links": [
+          {
+            "name": "Kajal",
+            "href": "/category/kajal"
+          },
+          {
+            "name": "Eyeliner",
+            "href": "/category/eyeliner"
+          },
+          {
+            "name": "Eye Shadow",
+            "href": "/category/eye-shadow"
+          },
+          {
+            "name": "Eye Brow Enhancers",
+            "href": "/category/eye-brow"
+          }
+        ]
+      },
+      {
+        "title": "LIPS",
+        "links": [
+          {
+            "name": "Lipstick",
+            "href": "/category/lipstick"
+          },
+          {
+            "name": "Liquid Lipsticks",
+            "href": "/category/liquid-lipstick"
+          },
+          {
+            "name": "Lip Crayon",
+            "href": "/category/lip-crayon"
+          },
+          {
+            "name": "Lip Gloss",
+            "href": "/category/lip-gloss"
+          }
+        ]
+      },
+      {
+        "title": "NAILS",
+        "links": [
+          {
+            "name": "Nail Polish",
+            "href": "/category/nail-polish"
+          },
+          {
+            "name": "Nail Polish Sets",
+            "href": "/category/nail-polish-sets"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Skin",
+    "href": "/category/skin",
+    "isPill": false,
+    "megaMenu": [
+      {
+        "title": "FACE",
+        "links": [
+          {
+            "name": "Cleanser",
+            "href": "/category/cleanser"
+          },
+          {
+            "name": "Day Cream",
+            "href": "/category/day-cream"
+          },
+          {
+            "name": "Night Cream",
+            "href": "/category/night-cream"
+          },
+          {
+            "name": "Facewash",
+            "href": "/category/facewash"
+          }
+        ]
+      },
+      {
+        "title": "K-BEAUTY",
+        "links": [
+          {
+            "name": "Moisturizers",
+            "href": "/category/k-beauty-moisturizers"
+          },
+          {
+            "name": "Serums & Oils",
+            "href": "/category/k-beauty-serums"
+          },
+          {
+            "name": "Sheet Mask",
+            "href": "/category/sheet-mask"
+          }
+        ]
+      },
+      {
+        "title": "SHOP BY CONCERN",
+        "links": [
+          {
+            "name": "Skin Lightening",
+            "href": "/category/skin-lightening"
+          },
+          {
+            "name": "Pigmentation",
+            "href": "/category/pigmentation"
+          },
+          {
+            "name": "Anti Aging",
+            "href": "/category/anti-aging"
+          },
+          {
+            "name": "Oil Control",
+            "href": "/category/oil-control"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Hair",
+    "href": "/category/hair",
+    "isPill": false,
+    "megaMenu": [
+      {
+        "title": "HAIR CARE",
+        "links": [
+          {
+            "name": "Shampoo",
+            "href": "/category/shampoo"
+          },
+          {
+            "name": "Conditioner",
+            "href": "/category/conditioner"
+          },
+          {
+            "name": "Hair Oil",
+            "href": "/category/hair-oil"
+          }
+        ]
+      },
+      {
+        "title": "HAIR STYLING",
+        "links": [
+          {
+            "name": "Hair Color",
+            "href": "/category/hair-color"
+          },
+          {
+            "name": "Hair Spray",
+            "href": "/category/hair-spray"
+          }
+        ]
+      },
+      {
+        "title": "SHOP BY CONCERN",
+        "links": [
+          {
+            "name": "Hairfall & Thinning",
+            "href": "/category/hairfall"
+          },
+          {
+            "name": "Dandruff",
+            "href": "/category/dandruff"
+          },
+          {
+            "name": "Dry & Frizzy Hair",
+            "href": "/category/dry-frizzy-hair"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Personal care",
+    "href": "/category/personal-care",
+    "isPill": false,
+    "megaMenu": [
+      {
+        "title": "BATH & SHOWER",
+        "links": [
+          {
+            "name": "Scrubs & Exfoliants",
+            "href": "/category/body-scrub"
+          },
+          {
+            "name": "Shower Gels & Body Wash",
+            "href": "/category/body-wash"
+          }
+        ]
+      },
+      {
+        "title": "FEMININE CARE",
+        "links": [
+          {
+            "name": "Feminine Cleanser",
+            "href": "/category/feminine-cleanser"
+          },
+          {
+            "name": "Sanitary Napkins",
+            "href": "/category/sanitary-napkins"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mom & Baby",
+    "href": "/category/mom-and-baby",
+    "isPill": false,
+    "megaMenu": [
+      {
+        "title": "BABY CARE",
+        "links": [
+          {
+            "name": "Creams, Lotions & Oils",
+            "href": "/category/baby-lotion"
+          },
+          {
+            "name": "Shampoo",
+            "href": "/category/baby-shampoo"
+          },
+          {
+            "name": "Wipes",
+            "href": "/category/baby-wipes"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Fragrance",
+    "href": "/category/fragrance",
+    "isPill": false,
+    "megaMenu": [
+      {
+        "title": "FRAGRANCE",
+        "links": [
+          {
+            "name": "Perfume",
+            "href": "/category/perfume"
+          },
+          {
+            "name": "Body Spray",
+            "href": "/category/body-spray"
+          },
+          {
+            "name": "Body Mist",
+            "href": "/category/body-mist"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Undergarments",
+    "href": "/category/undergarments",
+    "isPill": true,
+    "pillColor": "bg-blue-600",
+    "megaMenu": [
+      {
+        "title": "BRA",
+        "links": [
+          {
+            "name": "Premium Regular Bra",
+            "href": "/category/premium-bra"
+          },
+          {
+            "name": "Padded Bra",
+            "href": "/category/padded-bra"
+          }
+        ]
+      },
+      {
+        "title": "PANTY",
+        "links": [
+          {
+            "name": "Regular Panty",
+            "href": "/category/regular-panty"
+          },
+          {
+            "name": "Seamless Panty",
+            "href": "/category/seamless-panty"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Puja Sale 2025",
+    "href": "/category/puja-sale",
+    "isPill": true,
+    "pillColor": "bg-pink-600",
+    "megaMenu": [
+      {
+        "title": "SPECIAL OFFERS",
+        "links": [
+          {
+            "name": "Makeup For Puja",
+            "href": "/category/puja-makeup"
+          },
+          {
+            "name": "Skincare Kits",
+            "href": "/category/puja-skincare"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jewellery",
+    "href": "/category/jewellery",
+    "isPill": true,
+    "pillColor": "bg-purple-600",
+    "megaMenu": [
+      {
+        "title": "JEWELLERY",
+        "links": [
+          {
+            "name": "Necklaces",
+            "href": "/category/necklaces"
+          },
+          {
+            "name": "Earrings",
+            "href": "/category/earrings"
+          },
+          {
+            "name": "Bracelets & Bangles",
+            "href": "/category/bracelets"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Clearance Sale",
+    "href": "/category/clearance-sale",
+    "isPill": true,
+    "pillColor": "bg-teal-500",
+    "megaMenu": [
+      {
+        "title": "UPTO 50% OFF",
+        "links": [
+          {
+            "name": "Selected Makeup",
+            "href": "/category/sale-makeup"
+          },
+          {
+            "name": "Skincare Deals",
+            "href": "/category/sale-skincare"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Men",
+    "href": "/category/men",
+    "isPill": true,
+    "pillColor": "bg-green-700",
+    "megaMenu": [
+      {
+        "title": "SHAVING",
+        "links": [
+          {
+            "name": "Razor",
+            "href": "/category/razor"
+          },
+          {
+            "name": "Shaving cream, Foam & Gel",
+            "href": "/category/shaving-cream"
+          }
+        ]
+      },
+      {
+        "title": "SKIN CARE",
+        "links": [
+          {
+            "name": "Face Wash",
+            "href": "/category/men-facewash"
+          },
+          {
+            "name": "Moisturizer",
+            "href": "/category/men-moisturizer"
+          }
+        ]
+      }
+    ]
+  }
+]

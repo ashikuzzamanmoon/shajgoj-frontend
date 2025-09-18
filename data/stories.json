@@ -1,0 +1,87 @@
+[
+  {
+    "id": 1,
+    "title": "Share the Joy of Eid Gifting with Sundora",
+    "image": "/images/stories/eid-gifting.webp",
+    "href": "/stories/eid-gifting",
+    "showTitleInPage": true,
+    "content": [
+      {
+        "type": "image",
+        "src": "/images/stories/eid-banner.webp"
+      },
+      {
+        "type": "paragraph",
+        "text": "Eid is a time of joy, celebration, and sharing happiness with loved ones. What better way to express your love and appreciation than with a thoughtful gift from Sundora? Discover our curated collection of luxury perfumes and cosmetics, perfect for making this Eid unforgettable."
+      },
+      {
+        "type": "image",
+        "src": "/images/stories/eid-for-him.webp"
+      },
+      {
+        "type": "subheading",
+        "text": "For Him"
+      },
+      {
+        "type": "productCarousel",
+        "productIds": [1, 2, 3, 8]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "The Best Fragrances within Tk 5,000",
+    "description": "Elevate Your Fragrance Game Without Breaking the Bank",
+    "image": "/images/stories/best-deals.webp",
+    "href": "/stories/best-deals",
+    "showTitleInPage": true,
+    "content": [
+      {
+        "type": "image",
+        "src": "/images/stories/best-deals-banner.webp"
+      },
+      {
+        "type": "paragraph",
+        "text": "When it comes to fragrances, there's a common misconception that a higher price tag equals a better scent. While luxury perfumes certainly have their charm, you don't have to break the bank to smell amazing. At Sundora, we believe in making luxury accessible. We've curated a list of the best fragrances available for under Tk 5,000 that offer exceptional quality, longevity, and a captivating aroma."
+      },
+      {
+        "type": "image",
+        "src": "/images/stories/green-bottle.webp"
+      },
+      {
+        "type": "paragraph",
+        "text": "United Colors of Benetton’s WE ARE TRIBE Eau de Toilette is a vibrant and youthful fragrance that captures the spirit of unity and adventure. This scent is perfect for the modern man who is confident and free-spirited. With its fresh and energetic notes, it’s an ideal choice for everyday wear."
+      },
+      {
+        "type": "image",
+        "src": "/images/stories/grey-bottle.webp"
+      },
+      {
+        "type": "paragraph",
+        "text": "Banderas The Icon Eau de Parfum for men is a sophisticated and charismatic fragrance that exudes confidence. It's a scent for the man who is ready to conquer the world, a true icon of modern masculinity. The EDP concentration ensures it lasts throughout the day, making a lasting impression."
+      },
+      {
+        "type": "image",
+        "src": "/images/stories/blue-bottle.webp"
+      },
+      {
+        "type": "paragraph",
+        "text": "Davidoff Cool Water Reborn Eau de Parfum is a modern take on a timeless classic. It retains the iconic freshness of the original Cool Water but adds a new layer of depth and intensity. This fragrance is perfect for the man who appreciates both tradition and innovation."
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Sundora Anniversary Sale",
+    "description": "Celebrating Sundora's Anniversary!",
+    "image": "/images/stories/anniversary.webp",
+    "href": "/stories/anniversary-sale",
+    "showTitleInPage": false,
+    "content": [
+      {
+        "type": "image",
+        "src": "/images/stories/anniversary-full.webp"
+      }
+    ]
+  }
+]

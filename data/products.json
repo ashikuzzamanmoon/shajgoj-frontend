@@ -1,0 +1,626 @@
+[
+  {
+    "id": 1,
+    "name": "Maybelline Superstay Vinyl Ink Liquid Lipstick",
+    "brand": "Maybelline",
+    "image": "/images/products/maybelline-lipstick.jpg",
+    "gallery": [
+      "/images/products/maybelline-lipstick-thumb1.jpg"
+    ],
+    "description": "A long-lasting liquid lipstick with a shiny vinyl finish. Stays put for up to 16 hours without smudging or transferring.",
+    "categories": [
+      "Makeup",
+      "Lips",
+      "Lipstick",
+      "Women"
+    ],
+    "rating": 4.8,
+    "reviewCount": 102,
+    "badges": [
+      "-15%"
+    ],
+    "variantType": "color",
+    "variants": [
+      {
+        "id": 101,
+        "name": "Peachy",
+        "hexCode": "#E68FAC",
+        "price": 1445,
+        "originalPrice": 1700,
+        "discount": 15
+      },
+      {
+        "id": 102,
+        "name": "Witty",
+        "hexCode": "#C45F61",
+        "price": 1445,
+        "originalPrice": 1700,
+        "discount": 15
+      }
+    ],
+    "isSale": true
+  },
+  {
+    "id": 2,
+    "name": "The Body Shop Tea Tree Skin Clearing Facial Wash",
+    "brand": "The Body Shop",
+    "image": "/images/products/bodyshop-facewash.jpg",
+    "gallery": [],
+    "description": "A refreshing facial wash for oily, blemished skin. Enriched with Community Fair Trade tea tree oil from Kenya.",
+    "categories": [
+      "Skincare",
+      "Face",
+      "Facewash",
+      "Acne",
+      "Oil Control"
+    ],
+    "rating": 4.9,
+    "reviewCount": 250,
+    "badges": [],
+    "variantType": "size",
+    "variants": [
+      {
+        "id": 201,
+        "name": "250ml",
+        "price": 1250,
+        "originalPrice": 1250,
+        "discount": 0
+      },
+      {
+        "id": 202,
+        "name": "400ml",
+        "price": 1850,
+        "originalPrice": 1850,
+        "discount": 0
+      }
+    ],
+    "isNewArrival": true
+  },
+  {
+    "id": 3,
+    "name": "L'Oreal Paris Hyaluron Moisture Shampoo",
+    "brand": "L'Oreal",
+    "image": "/images/products/loreal-shampoo.jpg",
+    "gallery": [],
+    "description": "Hydrating shampoo for dehydrated hair, infused with hyaluronic acid to provide long-lasting hydration.",
+    "categories": [
+      "Hair",
+      "Hair Care",
+      "Shampoo",
+      "Dry & Frizzy Hair"
+    ],
+    "rating": 4.5,
+    "reviewCount": 88,
+    "badges": [
+      "BOGO"
+    ],
+    "variantType": "size",
+    "variants": [
+      {
+        "id": 301,
+        "name": "180ml",
+        "price": 449,
+        "originalPrice": 449,
+        "discount": 0
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Technic Mega Sultry 12 Colors Eyeshadow Palette",
+    "brand": "Technic",
+    "image": "/images/products/technic-eyeshadow.jpg",
+    "gallery": [],
+    "description": "A versatile eyeshadow palette with 12 shades of warm, sultry tones in matte and shimmer finishes.",
+    "categories": [
+      "Makeup",
+      "Eyes",
+      "Eye Shadow",
+      "Women"
+    ],
+    "rating": 4.6,
+    "reviewCount": 45,
+    "badges": [
+      "-20%"
+    ],
+    "variantType": "color",
+    "variants": [
+      {
+        "id": 401,
+        "name": "Sultry",
+        "hexCode": "#8B4513",
+        "price": 600,
+        "originalPrice": 750,
+        "discount": 20
+      }
+    ],
+    "isSale": true
+  },
+  {
+    "id": 5,
+    "name": "NIVEA Men Deep Impact Body Spray",
+    "brand": "NIVEA Men",
+    "image": "/images/products/nivea-deo.jpg",
+    "gallery": [],
+    "description": "A deodorant for men that provides a feeling of deep cleansing and freshness. With a masculine dark wood scent.",
+    "categories": [
+      "Personal care",
+      "Deodorants/Roll-Ons",
+      "Men"
+    ],
+    "rating": 4.7,
+    "reviewCount": 150,
+    "badges": [],
+    "variantType": "size",
+    "variants": [
+      {
+        "id": 501,
+        "name": "150ml",
+        "price": 380,
+        "originalPrice": 380,
+        "discount": 0
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Pond's Super Light Gel Moisturizer",
+    "brand": "Pond's",
+    "image": "/images/products/ponds-gel.jpg",
+    "gallery": [],
+    "description": "A super lightweight and non-oily gel formula, infused with Hyaluronic Acid and Vitamin E for a water-fresh glow.",
+    "categories": [
+      "Skincare",
+      "Moisturizer",
+      "Face",
+      "Dry Skin Remedy"
+    ],
+    "rating": 4.8,
+    "reviewCount": 310,
+    "badges": [
+      "-33%"
+    ],
+    "variantType": "size",
+    "variants": [
+      {
+        "id": 601,
+        "name": "100ml",
+        "price": 300,
+        "originalPrice": 450,
+        "discount": 33
+      }
+    ],
+    "isSale": true
+  },
+  {
+    "id": 7,
+    "name": "Focallure Matte Liquid Lipstick",
+    "brand": "Focallure",
+    "image": "/images/products/focallure-lipstick.jpg",
+    "gallery": [],
+    "description": "A high-pigment, long-lasting matte liquid lipstick that offers a comfortable, non-drying feel.",
+    "categories": [
+      "Makeup",
+      "Lips",
+      "Liquid Lipsticks",
+      "Women"
+    ],
+    "rating": 4.4,
+    "reviewCount": 95,
+    "badges": [
+      "CLEARANCE SALE"
+    ],
+    "variantType": "color",
+    "variants": [
+      {
+        "id": 701,
+        "name": "Nude Pink",
+        "hexCode": "#D19A8D",
+        "price": 350,
+        "originalPrice": 500,
+        "discount": 30
+      }
+    ],
+    "isSale": true
+  },
+  {
+    "id": 8,
+    "name": "Senora Sanitary Napkin Belt System",
+    "brand": "Senora",
+    "image": "/images/products/senora-napkin.jpg",
+    "gallery": [],
+    "description": "Comfortable and secure sanitary napkins with a belt system for reliable protection.",
+    "categories": [
+      "Personal care",
+      "Feminine Hygiene",
+      "Sanitary Napkins",
+      "Women"
+    ],
+    "rating": 4.9,
+    "reviewCount": 180,
+    "badges": [],
+    "variantType": "size",
+    "variants": [
+      {
+        "id": 801,
+        "name": "10 Pads",
+        "price": 120,
+        "originalPrice": 120,
+        "discount": 0
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Parachute Naturale Anti Hair Fall Shampoo",
+    "brand": "Parachute",
+    "image": "/images/products/parachute-shampoo.jpg",
+    "gallery": [],
+    "description": "Enriched with the goodness of Coconut Milk and Onion, this shampoo helps in reducing hair fall.",
+    "categories": [
+      "Hair",
+      "Hair Care",
+      "Shampoo",
+      "Hairfall & Thinning"
+    ],
+    "rating": 4.5,
+    "reviewCount": 72,
+    "badges": [],
+    "variantType": "size",
+    "variants": [
+      {
+        "id": 901,
+        "name": "345ml",
+        "price": 430,
+        "originalPrice": 430,
+        "discount": 0
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "AXE Signature Intense Body Perfume",
+    "brand": "AXE",
+    "image": "/images/products/axe-perfume.jpg",
+    "gallery": [],
+    "description": "A woody and musky fragrance that is strong, long-lasting and perfect for the man who makes an impression.",
+    "categories": [
+      "Fragrance",
+      "Body Mist/Spray",
+      "Men"
+    ],
+    "rating": 4.6,
+    "reviewCount": 112,
+    "badges": [
+      "-10%"
+    ],
+    "variantType": "size",
+    "variants": [
+      {
+        "id": 1001,
+        "name": "154ml",
+        "price": 405,
+        "originalPrice": 450,
+        "discount": 10
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Bio-Oil Skincare Oil",
+    "brand": "Bio-Oil",
+    "image": "/images/products/bio-oil.jpg",
+    "gallery": [],
+    "description": "A specialist skincare product that helps improve the appearance of scars, stretch marks and uneven skin tone.",
+    "categories": [
+      "Skincare",
+      "Body",
+      "Body Oil",
+      "Anti-Stretch Mark Creams"
+    ],
+    "rating": 4.9,
+    "reviewCount": 405,
+    "badges": [],
+    "variantType": "size",
+    "variants": [
+      {
+        "id": 1101,
+        "name": "60ml",
+        "price": 850,
+        "originalPrice": 850,
+        "discount": 0
+      },
+      {
+        "id": 1102,
+        "name": "125ml",
+        "price": 1450,
+        "originalPrice": 1450,
+        "discount": 0
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Nirvana Color Face Palette - Strobe & Glow",
+    "brand": "Nirvana",
+    "image": "/images/products/nirvana-palette.jpg",
+    "gallery": [],
+    "description": "A versatile face palette featuring blush, bronzer, and highlighter shades for a complete glowing look.",
+    "categories": [
+      "Makeup",
+      "Face",
+      "Face Palette",
+      "Women"
+    ],
+    "rating": 4.7,
+    "reviewCount": 33,
+    "badges": [
+      "-25%"
+    ],
+    "variantType": "color",
+    "variants": [
+      {
+        "id": 1201,
+        "name": "Strobe & Glow",
+        "hexCode": "#F3C5B3",
+        "price": 975,
+        "originalPrice": 1300,
+        "discount": 25
+      }
+    ],
+    "isNewArrival": true
+  },
+  {
+    "id": 13,
+    "name": "Johnsons Baby Powder",
+    "brand": "Johnson's",
+    "image": "/images/products/johnsons-powder.jpg",
+    "gallery": [],
+    "description": "Classic baby powder that keeps baby's skin comfortable, dry, and feeling soft.",
+    "categories": [
+      "Mom & Baby",
+      "Baby Care",
+      "Talcum Powder"
+    ],
+    "rating": 4.9,
+    "reviewCount": 500,
+    "badges": [],
+    "variantType": "size",
+    "variants": [
+      {
+        "id": 1301,
+        "name": "200g",
+        "price": 350,
+        "originalPrice": 350,
+        "discount": 0
+      },
+      {
+        "id": 1302,
+        "name": "400g",
+        "price": 600,
+        "originalPrice": 600,
+        "discount": 0
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Ribana Saffron Goats Milk Soap",
+    "brand": "Ribana",
+    "image": "/images/products/ribana-soap.jpg",
+    "gallery": [],
+    "description": "A handmade soap with saffron and goat's milk, known for its skin brightening and moisturizing properties.",
+    "categories": [
+      "Skincare",
+      "Bath & Shower",
+      "Soaps",
+      "K-Beauty"
+    ],
+    "rating": 4.8,
+    "reviewCount": 89,
+    "badges": [
+      "-5%"
+    ],
+    "variantType": "size",
+    "variants": [
+      {
+        "id": 1401,
+        "name": "100g",
+        "price": 380,
+        "originalPrice": 400,
+        "discount": 5
+      }
+    ],
+    "isSale": true
+  },
+  {
+    "id": 15,
+    "name": "Kemei Professional Hair Straightener",
+    "brand": "Kemei",
+    "image": "/images/products/kemei-straightener.jpg",
+    "gallery": [],
+    "description": "A professional-grade hair straightener with ceramic plates for smooth, frizz-free styling.",
+    "categories": [
+      "Hair",
+      "Tools & Accessories",
+      "Hair straightener"
+    ],
+    "rating": 4.5,
+    "reviewCount": 55,
+    "badges": [],
+    "variantType": "color",
+    "variants": [
+      {
+        "id": 1501,
+        "name": "Black",
+        "hexCode": "#000000",
+        "price": 1200,
+        "originalPrice": 1200,
+        "discount": 0
+      }
+    ],
+    "isNewArrival": true
+  },
+  {
+    "id": 16,
+    "name": "Shein Basic Bodysuit",
+    "brand": "Shein",
+    "image": "/images/products/shein-bodysuit.jpg",
+    "gallery": [],
+    "description": "A comfortable and versatile basic bodysuit, perfect for layering or wearing on its own.",
+    "categories": [
+      "Undergarments",
+      "Bodysuits & Body Shapers",
+      "Women"
+    ],
+    "rating": 4.3,
+    "reviewCount": 21,
+    "badges": [],
+    "variantType": "size",
+    "variants": [
+      {
+        "id": 1601,
+        "name": "M",
+        "price": 950,
+        "originalPrice": 950,
+        "discount": 0
+      },
+      {
+        "id": 1602,
+        "name": "L",
+        "price": 950,
+        "originalPrice": 950,
+        "discount": 0
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Jewellery Box Organizer",
+    "brand": "Unbranded",
+    "image": "/images/products/jewellery-box.jpg",
+    "gallery": [],
+    "description": "A stylish and functional box to organize your precious jewellery.",
+    "categories": [
+      "Jewellery",
+      "Accessories",
+      "Women"
+    ],
+    "rating": 4.6,
+    "reviewCount": 15,
+    "badges": [],
+    "variantType": "color",
+    "variants": [
+      {
+        "id": 1701,
+        "name": "Pink",
+        "hexCode": "#FFC0CB",
+        "price": 800,
+        "originalPrice": 800,
+        "discount": 0
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Garnier Micellar Cleansing Water",
+    "brand": "Garnier",
+    "image": "/images/products/garnier-micellar.jpg",
+    "gallery": [],
+    "description": "An all-in-one cleanser that removes makeup, cleanses and soothes skin without rinsing.",
+    "categories": [
+      "Skincare",
+      "Face",
+      "Makeup Remover",
+      "Cleanser"
+    ],
+    "rating": 4.9,
+    "reviewCount": 620,
+    "badges": [
+      "COMBO"
+    ],
+    "variantType": "size",
+    "variants": [
+      {
+        "id": 1801,
+        "name": "125ml",
+        "price": 380,
+        "originalPrice": 380,
+        "discount": 0
+      },
+      {
+        "id": 1802,
+        "name": "400ml",
+        "price": 750,
+        "originalPrice": 750,
+        "discount": 0
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Simple Kind to Skin Refreshing Facial Wash",
+    "brand": "Simple",
+    "image": "/images/products/simple-facewash.jpg",
+    "gallery": [],
+    "description": "A 100% soap-free facial wash that is kind to skin, leaving it feeling clean, fresh and hydrated.",
+    "categories": [
+      "Skincare",
+      "Face",
+      "Facewash",
+      "K-Beauty"
+    ],
+    "rating": 4.8,
+    "reviewCount": 350,
+    "badges": [
+      "-10%"
+    ],
+    "variantType": "size",
+    "variants": [
+      {
+        "id": 1901,
+        "name": "150ml",
+        "price": 450,
+        "originalPrice": 500,
+        "discount": 10
+      }
+    ],
+    "isSale": true
+  },
+  {
+    "id": 20,
+    "name": "The Ordinary Niacinamide 10% + Zinc 1%",
+    "brand": "The Ordinary",
+    "image": "/images/products/ordinary-serum.jpg",
+    "gallery": [],
+    "description": "A high-strength vitamin and mineral blemish formula that reduces the appearance of skin blemishes and congestion.",
+    "categories": [
+      "Skincare",
+      "Serums & Oils",
+      "Face",
+      "Oil Control",
+      "Acne"
+    ],
+    "rating": 4.9,
+    "reviewCount": 950,
+    "badges": [],
+    "variantType": "size",
+    "variants": [
+      {
+        "id": 2001,
+        "name": "30ml",
+        "price": 1150,
+        "originalPrice": 1150,
+        "discount": 0
+      },
+      {
+        "id": 2002,
+        "name": "60ml",
+        "price": 2000,
+        "originalPrice": 2000,
+        "discount": 0
+      }
+    ],
+    "isNewArrival": true
+  }
+]
