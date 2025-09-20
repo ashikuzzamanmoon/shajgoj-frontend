@@ -93,7 +93,7 @@ const Navbar = () => {
                 SHAJGOJ
               </Link>
               <div>
-                {/* ডানদিকে User/Wishlist আইকন লাগলে এখানে যোগ করা যাবে */}
+                {/* any icon here */}
               </div>
             </div>
             <div className="relative mb-3">

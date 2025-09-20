@@ -173,7 +173,8 @@
       "Skincare",
       "Moisturizer",
       "Face",
-      "Dry Skin Remedy"
+      "Dry Skin Remedy",
+      "Ponds Beauty Deals"
     ],
     "rating": 4.8,
     "reviewCount": 310,
@@ -622,5 +623,91 @@
       }
     ],
     "isNewArrival": true
+  },
+  {
+    "id": 21,
+    "name": "Pond's Bright Beauty Face Wash",
+    "brand": "Pond's",
+    "image": "/images/products/ponds-bright-facewash.jpg",
+    "categories": [
+      "Skincare",
+      "Face",
+      "Facewash",
+      "Ponds Beauty Deals"
+    ],
+    "rating": 4.7,
+    "reviewCount": 450,
+    "badges": [
+      "-15%"
+    ],
+    "variantType": "size",
+    "variants": [
+      {
+        "id": 2101,
+        "name": "100g",
+        "price": 280,
+        "originalPrice": 330,
+        "discount": 15
+      }
+    ],
+    "isSale": true
+  },
+  {
+    "id": 22,
+    "name": "Pond's Age Miracle Day Cream",
+    "brand": "Pond's",
+    "image": "/images/products/ponds-age-miracle.jpg",
+    "categories": [
+      "Skincare",
+      "Face",
+      "Day Cream",
+      "Anti Aging",
+      "Ponds Beauty Deals"
+    ],
+    "rating": 4.8,
+    "reviewCount": 280,
+    "badges": [
+      "-25%"
+    ],
+    "variantType": "size",
+    "variants": [
+      {
+        "id": 2201,
+        "name": "50g",
+        "price": 975,
+        "originalPrice": 1300,
+        "discount": 25
+      }
+    ],
+    "isSale": true
+  },
+  {
+    "id": 23,
+    "name": "Pond's White Beauty Mineral Clay Face Wash",
+    "brand": "Pond's",
+    "image": "/images/products/ponds-clay-facewash.jpg",
+    "categories": [
+      "Skincare",
+      "Face",
+      "Facewash",
+      "Oil Control",
+      "Ponds Beauty Deals"
+    ],
+    "rating": 4.6,
+    "reviewCount": 190,
+    "badges": [
+      "-10%"
+    ],
+    "variantType": "size",
+    "variants": [
+      {
+        "id": 2301,
+        "name": "90g",
+        "price": 315,
+        "originalPrice": 350,
+        "discount": 10
+      }
+    ],
+    "isSale": true
   }
 ]
