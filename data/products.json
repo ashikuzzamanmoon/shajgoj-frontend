@@ -87,7 +87,7 @@
       "Hair",
       "Hair Care",
       "Shampoo",
-      "Dry & Frizzy Hair"
+      "Dry and Frizzy Hair"
     ],
     "rating": 4.5,
     "reviewCount": 88,
@@ -262,7 +262,9 @@
       "Hair",
       "Hair Care",
       "Shampoo",
-      "Hairfall & Thinning"
+      "Hairfall and Thinning",
+      "Monsoon Hair Care",
+      "Square"
     ],
     "rating": 4.5,
     "reviewCount": 72,
@@ -342,7 +344,7 @@
   },
   {
     "id": 12,
-    "name": "Nirvana Color Face Palette - Strobe & Glow",
+    "name": "Nirvana Color Face Palette - Strobe and Glow",
     "brand": "Nirvana",
     "image": "/images/products/nirvana-palette.jpg",
     "gallery": [],
@@ -362,7 +364,7 @@
     "variants": [
       {
         "id": 1201,
-        "name": "Strobe & Glow",
+        "name": "Strobe and Glow",
         "hexCode": "#F3C5B3",
         "price": 975,
         "originalPrice": 1300,
@@ -379,7 +381,7 @@
     "gallery": [],
     "description": "Classic baby powder that keeps baby's skin comfortable, dry, and feeling soft.",
     "categories": [
-      "Mom & Baby",
+      "Mom and Baby",
       "Baby Care",
       "Talcum Powder"
     ],
@@ -413,9 +415,10 @@
     "description": "A handmade soap with saffron and goat's milk, known for its skin brightening and moisturizing properties.",
     "categories": [
       "Skincare",
-      "Bath & Shower",
+      "Bath and Shower",
       "Soaps",
-      "K-Beauty"
+      "K-Beauty",
+      "Korean Skincare Festival"
     ],
     "rating": 4.8,
     "reviewCount": 89,
@@ -443,7 +446,7 @@
     "description": "A professional-grade hair straightener with ceramic plates for smooth, frizz-free styling.",
     "categories": [
       "Hair",
-      "Tools & Accessories",
+      "Tools and Accessories",
       "Hair straightener"
     ],
     "rating": 4.5,
@@ -471,7 +474,7 @@
     "description": "A comfortable and versatile basic bodysuit, perfect for layering or wearing on its own.",
     "categories": [
       "Undergarments",
-      "Bodysuits & Body Shapers",
+      "Bodysuits and Body Shapers",
       "Women"
     ],
     "rating": 4.3,
@@ -569,7 +572,8 @@
       "Skincare",
       "Face",
       "Facewash",
-      "K-Beauty"
+      "K-Beauty",
+      "Korean Skincare Festival"
     ],
     "rating": 4.8,
     "reviewCount": 350,
@@ -597,7 +601,7 @@
     "description": "A high-strength vitamin and mineral blemish formula that reduces the appearance of skin blemishes and congestion.",
     "categories": [
       "Skincare",
-      "Serums & Oils",
+      "Serums and Oils",
       "Face",
       "Oil Control",
       "Acne"
@@ -709,5 +713,80 @@
       }
     ],
     "isSale": true
+  },
+  {
+    "id": 24,
+    "name": "Neutrogena Hydro Boost Water Gel",
+    "brand": "Neutrogena",
+    "image": "/images/products/neutrogena-hydro-boost.jpg",
+    "categories": [
+      "Skincare",
+      "Moisturizer",
+      "Neutrogena"
+    ],
+    "rating": 4.9,
+    "reviewCount": 850,
+    "badges": [],
+    "variantType": "size",
+    "variants": [
+      {
+        "id": 2401,
+        "name": "50g",
+        "price": 1850,
+        "originalPrice": 1850,
+        "discount": 0
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "name": "CeraVe Hydrating Cleanser",
+    "brand": "CeraVe",
+    "image": "/images/products/cerave-cleanser.jpg",
+    "categories": [
+      "Skincare",
+      "Cleanser",
+      "CeraVe"
+    ],
+    "rating": 4.9,
+    "reviewCount": 980,
+    "badges": [],
+    "variantType": "size",
+    "variants": [
+      {
+        "id": 2501,
+        "name": "236ml",
+        "price": 1550,
+        "originalPrice": 1550,
+        "discount": 0
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "name": "Skin Cafe 100% Natural Rose Water Face Mist",
+    "brand": "Skin Cafe",
+    "image": "/images/products/skin-cafe-mist.jpg",
+    "categories": [
+      "Skincare",
+      "Face",
+      "Toner & Mist",
+      "Skin Cafe",
+      "Chardike",
+      "Reckitt"
+    ],
+    "rating": 4.7,
+    "reviewCount": 150,
+    "badges": [],
+    "variantType": "size",
+    "variants": [
+      {
+        "id": 2601,
+        "name": "120ml",
+        "price": 350,
+        "originalPrice": 350,
+        "discount": 0
+      }
+    ]
   }
 ]
