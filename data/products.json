@@ -4,21 +4,12 @@
     "name": "Maybelline Superstay Vinyl Ink Liquid Lipstick",
     "brand": "Maybelline",
     "image": "/images/products/maybelline-lipstick.jpg",
-    "gallery": [
-      "/images/products/maybelline-lipstick-thumb1.jpg"
-    ],
+    "gallery": ["/images/products/maybelline-lipstick-thumb1.jpg"],
     "description": "A long-lasting liquid lipstick with a shiny vinyl finish. Stays put for up to 16 hours without smudging or transferring.",
-    "categories": [
-      "Makeup",
-      "Lips",
-      "Lipstick",
-      "Women"
-    ],
+    "categories": ["Makeup", "Lips", "Lipstick", "Women"],
     "rating": 4.8,
     "reviewCount": 102,
-    "badges": [
-      "-15%"
-    ],
+    "badges": ["-15%"],
     "variantType": "color",
     "variants": [
       {
@@ -47,13 +38,7 @@
     "image": "/images/products/bodyshop-facewash.jpg",
     "gallery": [],
     "description": "A refreshing facial wash for oily, blemished skin. Enriched with Community Fair Trade tea tree oil from Kenya.",
-    "categories": [
-      "Skincare",
-      "Face",
-      "Facewash",
-      "Acne",
-      "Oil Control"
-    ],
+    "categories": ["Skincare", "Face", "Facewash", "Acne", "Oil Control"],
     "rating": 4.9,
     "reviewCount": 250,
     "badges": [],
@@ -87,13 +72,12 @@
       "Hair",
       "Hair Care",
       "Shampoo",
-      "Dry and Frizzy Hair"
+      "Dry and Frizzy Hair",
+      "BOGO"
     ],
     "rating": 4.5,
     "reviewCount": 88,
-    "badges": [
-      "BOGO"
-    ],
+    "badges": ["BOGO"],
     "variantType": "size",
     "variants": [
       {
@@ -112,17 +96,10 @@
     "image": "/images/products/technic-eyeshadow.jpg",
     "gallery": [],
     "description": "A versatile eyeshadow palette with 12 shades of warm, sultry tones in matte and shimmer finishes.",
-    "categories": [
-      "Makeup",
-      "Eyes",
-      "Eye Shadow",
-      "Women"
-    ],
+    "categories": ["Makeup", "Eyes", "Eye Shadow", "Women"],
     "rating": 4.6,
     "reviewCount": 45,
-    "badges": [
-      "-20%"
-    ],
+    "badges": ["-20%"],
     "variantType": "color",
     "variants": [
       {
@@ -143,11 +120,7 @@
     "image": "/images/products/nivea-deo.jpg",
     "gallery": [],
     "description": "A deodorant for men that provides a feeling of deep cleansing and freshness. With a masculine dark wood scent.",
-    "categories": [
-      "Personal care",
-      "Deodorants/Roll-Ons",
-      "Men"
-    ],
+    "categories": ["Personal care", "Deodorants/Roll-Ons", "Men"],
     "rating": 4.7,
     "reviewCount": 150,
     "badges": [],
@@ -178,9 +151,7 @@
     ],
     "rating": 4.8,
     "reviewCount": 310,
-    "badges": [
-      "-33%"
-    ],
+    "badges": ["-33%"],
     "variantType": "size",
     "variants": [
       {
@@ -204,13 +175,12 @@
       "Makeup",
       "Lips",
       "Liquid Lipsticks",
-      "Women"
+      "Women",
+      "Clearance Sale"
     ],
     "rating": 4.4,
     "reviewCount": 95,
-    "badges": [
-      "CLEARANCE SALE"
-    ],
+    "badges": ["CLEARANCE SALE"],
     "variantType": "color",
     "variants": [
       {
@@ -235,7 +205,8 @@
       "Personal care",
       "Feminine Hygiene",
       "Sanitary Napkins",
-      "Women"
+      "Women",
+      "Offers"
     ],
     "rating": 4.9,
     "reviewCount": 180,
@@ -287,16 +258,10 @@
     "image": "/images/products/axe-perfume.jpg",
     "gallery": [],
     "description": "A woody and musky fragrance that is strong, long-lasting and perfect for the man who makes an impression.",
-    "categories": [
-      "Fragrance",
-      "Body Mist/Spray",
-      "Men"
-    ],
+    "categories": ["Fragrance", "Body Mist/Spray", "Men"],
     "rating": 4.6,
     "reviewCount": 112,
-    "badges": [
-      "-10%"
-    ],
+    "badges": ["-10%"],
     "variantType": "size",
     "variants": [
       {
@@ -315,12 +280,7 @@
     "image": "/images/products/bio-oil.jpg",
     "gallery": [],
     "description": "A specialist skincare product that helps improve the appearance of scars, stretch marks and uneven skin tone.",
-    "categories": [
-      "Skincare",
-      "Body",
-      "Body Oil",
-      "Anti-Stretch Mark Creams"
-    ],
+    "categories": ["Skincare", "Body", "Body Oil", "Anti-Stretch Mark Creams"],
     "rating": 4.9,
     "reviewCount": 405,
     "badges": [],
@@ -349,17 +309,10 @@
     "image": "/images/products/nirvana-palette.jpg",
     "gallery": [],
     "description": "A versatile face palette featuring blush, bronzer, and highlighter shades for a complete glowing look.",
-    "categories": [
-      "Makeup",
-      "Face",
-      "Face Palette",
-      "Women"
-    ],
+    "categories": ["Makeup", "Face", "Face Palette", "Women"],
     "rating": 4.7,
     "reviewCount": 33,
-    "badges": [
-      "-25%"
-    ],
+    "badges": ["-25%"],
     "variantType": "color",
     "variants": [
       {
@@ -380,11 +333,7 @@
     "image": "/images/products/johnsons-powder.jpg",
     "gallery": [],
     "description": "Classic baby powder that keeps baby's skin comfortable, dry, and feeling soft.",
-    "categories": [
-      "Mom and Baby",
-      "Baby Care",
-      "Talcum Powder"
-    ],
+    "categories": ["Mom and Baby", "Baby Care", "Talcum Powder"],
     "rating": 4.9,
     "reviewCount": 500,
     "badges": [],
@@ -422,9 +371,7 @@
     ],
     "rating": 4.8,
     "reviewCount": 89,
-    "badges": [
-      "-5%"
-    ],
+    "badges": ["-5%"],
     "variantType": "size",
     "variants": [
       {
@@ -444,11 +391,7 @@
     "image": "/images/products/kemei-straightener.jpg",
     "gallery": [],
     "description": "A professional-grade hair straightener with ceramic plates for smooth, frizz-free styling.",
-    "categories": [
-      "Hair",
-      "Tools and Accessories",
-      "Hair straightener"
-    ],
+    "categories": ["Hair", "Tools and Accessories", "Hair straightener"],
     "rating": 4.5,
     "reviewCount": 55,
     "badges": [],
@@ -472,11 +415,7 @@
     "image": "/images/products/shein-bodysuit.jpg",
     "gallery": [],
     "description": "A comfortable and versatile basic bodysuit, perfect for layering or wearing on its own.",
-    "categories": [
-      "Undergarments",
-      "Bodysuits and Body Shapers",
-      "Women"
-    ],
+    "categories": ["Undergarments", "Bodysuits and Body Shapers", "Women"],
     "rating": 4.3,
     "reviewCount": 21,
     "badges": [],
@@ -505,11 +444,7 @@
     "image": "/images/products/jewellery-box.jpg",
     "gallery": [],
     "description": "A stylish and functional box to organize your precious jewellery.",
-    "categories": [
-      "Jewellery",
-      "Accessories",
-      "Women"
-    ],
+    "categories": ["Jewellery", "Accessories", "Women"],
     "rating": 4.6,
     "reviewCount": 15,
     "badges": [],
@@ -532,17 +467,10 @@
     "image": "/images/products/garnier-micellar.jpg",
     "gallery": [],
     "description": "An all-in-one cleanser that removes makeup, cleanses and soothes skin without rinsing.",
-    "categories": [
-      "Skincare",
-      "Face",
-      "Makeup Remover",
-      "Cleanser"
-    ],
+    "categories": ["Skincare", "Face", "Makeup Remover", "Cleanser", "Combo"],
     "rating": 4.9,
     "reviewCount": 620,
-    "badges": [
-      "COMBO"
-    ],
+    "badges": ["COMBO"],
     "variantType": "size",
     "variants": [
       {
@@ -577,9 +505,7 @@
     ],
     "rating": 4.8,
     "reviewCount": 350,
-    "badges": [
-      "-10%"
-    ],
+    "badges": ["-10%"],
     "variantType": "size",
     "variants": [
       {
@@ -633,17 +559,10 @@
     "name": "Pond's Bright Beauty Face Wash",
     "brand": "Pond's",
     "image": "/images/products/ponds-bright-facewash.jpg",
-    "categories": [
-      "Skincare",
-      "Face",
-      "Facewash",
-      "Ponds Beauty Deals"
-    ],
+    "categories": ["Skincare", "Face", "Facewash", "Ponds Beauty Deals"],
     "rating": 4.7,
     "reviewCount": 450,
-    "badges": [
-      "-15%"
-    ],
+    "badges": ["-15%"],
     "variantType": "size",
     "variants": [
       {
@@ -670,9 +589,7 @@
     ],
     "rating": 4.8,
     "reviewCount": 280,
-    "badges": [
-      "-25%"
-    ],
+    "badges": ["-25%"],
     "variantType": "size",
     "variants": [
       {
@@ -699,9 +616,7 @@
     ],
     "rating": 4.6,
     "reviewCount": 190,
-    "badges": [
-      "-10%"
-    ],
+    "badges": ["-10%"],
     "variantType": "size",
     "variants": [
       {
@@ -719,11 +634,7 @@
     "name": "Neutrogena Hydro Boost Water Gel",
     "brand": "Neutrogena",
     "image": "/images/products/neutrogena-hydro-boost.jpg",
-    "categories": [
-      "Skincare",
-      "Moisturizer",
-      "Neutrogena"
-    ],
+    "categories": ["Skincare", "Moisturizer", "Neutrogena"],
     "rating": 4.9,
     "reviewCount": 850,
     "badges": [],
@@ -743,11 +654,7 @@
     "name": "CeraVe Hydrating Cleanser",
     "brand": "CeraVe",
     "image": "/images/products/cerave-cleanser.jpg",
-    "categories": [
-      "Skincare",
-      "Cleanser",
-      "CeraVe"
-    ],
+    "categories": ["Skincare", "Cleanser", "CeraVe"],
     "rating": 4.9,
     "reviewCount": 980,
     "badges": [],
