@@ -197,14 +197,6 @@ const Navbar = () => {
         </div>
       </header>
 
-      {/* --- Floating Cart Button (For Mobile) --- */}
-      <button className="md:hidden fixed bottom-6 right-6 bg-pink-500 text-white p-4 rounded-full shadow-lg z-30">
-        <ShoppingBag size={24} />
-        <span className="absolute -top-1 -right-1 bg-black text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-          0
-        </span>
-      </button>
-
       <MobileMenu isOpen={isMobileMenuOpen} setIsOpen={setIsMobileMenuOpen} />
     </>
   );

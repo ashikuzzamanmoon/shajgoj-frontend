@@ -1,150 +1,207 @@
 // components/layout/Footer/Footer.tsx
-"use client";
-
-import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Phone, Clock, Mail, Copyright, ChevronDown } from "lucide-react";
+import { Facebook, Youtube, Instagram } from "lucide-react";
 
 const Footer = () => {
-  const [isPaymentsOpen, setIsPaymentsOpen] = useState(false);
+  const topCategories = [
+    { name: "MAKEUP", href: "/category/makeup" },
+    { name: "SKIN", href: "/category/skin" },
+    { name: "EYE CARE", href: "/category/eye-care" },
+    { name: "HAIR", href: "/category/hair" },
+    { name: "PERSONAL CARE", href: "/category/personal-care" },
+    { name: "NATURAL", href: "/category/natural" },
+    { name: "MOM & BABY", href: "/category/mom-and-baby" },
+  ];
 
-  const customerCareLinks = [
-    { name: "Delivery Information", href: "/delivery-info" },
-    { name: "Privacy Policy", href: "/privacy-policy" },
-    { name: "Terms & Conditions", href: "/terms" },
-    { name: "Cookie Policy", href: "/cookie-policy" },
-    { name: "Customer Complaint Form", href: "/complaint" },
-    { name: "Return & Refund Policies", href: "/refund-policy" },
-    { name: "Our Stores", href: "/stores" },
+  const quickLinks = [
+    { name: "OFFERS", href: "/category/offers" },
+    { name: "MENS PRODUCTS", href: "/category/men" },
+    { name: "SKIN CONCERNS", href: "/category/concerns" },
+    { name: "NEW ARRIVAL", href: "/category/new-arrivals" },
+    { name: "MAKEUP", href: "/category/makeup" },
   ];
 
   return (
-    <footer className="relative bg-[#2a676b] text-white pt-16 pb-8 overflow-hidden">
-      <div className="container mx-auto px-6 z-10 relative pb-28">
-        {/* --- footers main grid--- */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* column 1: CONTACT */}
-          <div className="space-y-4 text-sm">
-            <h3 className="font-semibold tracking-widest mb-4">CONTACT</h3>
-            <div className="flex items-center space-x-3">
-              <Phone size={16} />
-              <a href="tel:+8801966444455">+880 1966 444455</a>
-            </div>
-            <div className="flex items-center space-x-3">
-              <Clock size={16} />
-              <span>Sunday to Thursday from 9:30 AM to 6:30 PM</span>
-            </div>
-            <div className="flex items-center space-x-3">
-              <Mail size={16} />
-              <a href="mailto:support@sundora.com.bd">support@sundora.com.bd</a>
-            </div>
-            <div className="flex items-center space-x-4 pt-4">
-              <Link href="#">
-                <Image
-                  src="/images/socials/linkedin.webp"
-                  alt="LinkedIn"
-                  width={20}
-                  height={20}
-                />
-              </Link>
-              <Link href="#">
-                <Image
-                  src="/images/socials/facebook.webp"
-                  alt="Facebook"
-                  width={14}
-                  height={14}
-                />
-              </Link>
-              <Link href="#">
-                <Image
-                  src="/images/socials/instagram.webp"
-                  alt="Instagram"
-                  width={18}
-                  height={18}
-                />
-              </Link>
-            </div>
-            <div className="flex items-center space-x-3 pt-4 text-gray-400">
-              <Copyright size={16} />
-              <span>FCBT Ventures Pvt Ltd</span>
-            </div>
-          </div>
-
-          {/* column 2: CUSTOMER CARE */}
-          <div className="space-y-2 text-sm">
-            <h3 className="font-semibold tracking-widest mb-4">
-              CUSTOMER CARE
-            </h3>
-            {customerCareLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className="block hover:underline"
-              >
-                {link.name}
-              </Link>
-            ))}
-          </div>
-
-          {/* column 3: EXPERT INSIGHT */}
-          <div className="space-y-2 text-sm">
-            <h3 className="font-semibold tracking-widest mb-4">
-              EXPERT INSIGHT
-            </h3>
-            <Link href="/blogs" className="block hover:underline">
-              Blogs
-            </Link>
-          </div>
-
-          {/* column 4: PAYMENTS ACCEPTED */}
-          <div className="space-y-2 text-sm">
-            <h3 className="font-semibold tracking-widest mb-4">
-              PAYMENTS ACCEPTED
-            </h3>
-            <p>CASH ON DELIVERY</p>
-            <p>BKASH</p>
-            <div>
-              <button
-                className="flex items-center justify-between w-full"
-                onClick={() => setIsPaymentsOpen(!isPaymentsOpen)}
-              >
-                <span>ONLINE PAYMENTS</span>
-                <ChevronDown
-                  size={16}
-                  className={`transition-transform ${
-                    isPaymentsOpen ? "rotate-180" : ""
-                  }`}
-                />
-              </button>
-              {isPaymentsOpen && (
-                <div className="flex flex-col mt-2">
-                  <Image
-                    src="/images/footer/ssl.webp"
-                    alt="SSL Commerz"
-                    width={250}
-                    height={100}
-                  />
-                  <Image
-                    src="/images/footer/cards.webp"
-                    alt="Card Payments"
-                    width={250}
-                    height={50}
-                  />
-                </div>
-              )}
-            </div>
-          </div>
+    <footer className="bg-[#1D1D3D] text-white">
+      {/* --- banner image --- */}
+      <div className="bg-[#6b21a8]">
+        <div className="max-w-7xl mx-auto">
+          <Image
+            src="/images/footer/footer-banner.png"
+            alt="Our Promises"
+            width={1920}
+            height={150}
+            className="w-full h-auto"
+          />
         </div>
       </div>
-      {/* --- decorative image --- */}
-      <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-[400px] h-[150px]">
-        <Image
-          src="/images/footer/footer-art.webp"
-          alt="Footer Art"
-          layout="fill"
-          objectFit="contain"
-        />
+
+      <div className="container mx-auto px-6 py-12">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
+          {/* column 1: SHAJGOJ */}
+          <div className="col-span-2 md:col-span-1 space-y-4">
+            <h3 className="text-xl font-bold">SHAJGOJ</h3>
+            <ul className="space-y-2 text-sm text-gray-300">
+              <li>
+                <Link href="#" className="hover:underline">
+                  OUR STORY
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="hover:underline">
+                  SHAJGOJ MAGAZINE
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="hover:underline">
+                  SHAJGOJ OUTLETS
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="hover:underline">
+                  JOIN OUR TEAM
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="hover:underline">
+                  AUTHENTICITY
+                </Link>
+              </li>
+            </ul>
+            <div className="mt-4">
+              <p className="text-sm">SHARE YOUR LOVE</p>
+              <div className="flex space-x-3 mt-2">
+                <Link href="#">
+                  <Facebook size={20} />
+                </Link>
+                <Link href="#">
+                  <Youtube size={20} />
+                </Link>
+                <Link href="#">
+                  <Instagram size={20} />
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* column 2: TOP CATEGORIES */}
+          <div className="text-sm">
+            <h4 className="font-semibold mb-4">TOP CATEGORIES</h4>
+            <ul className="space-y-2 text-gray-300">
+              {topCategories.map((link) => (
+                <li key={link.name}>
+                  <Link href={link.href} className="hover:underline">
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* column 3: QUICK LINKS */}
+          <div className="text-sm">
+            <h4 className="font-semibold mb-4">QUICK LINKS</h4>
+            <ul className="space-y-2 text-gray-300">
+              {quickLinks.map((link) => (
+                <li key={link.name}>
+                  <Link href={link.href} className="hover:underline">
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* column 4: ALL ABOUT BEAUTY */}
+          <div className="text-sm">
+            <h4 className="font-semibold mb-4">ALL ABOUT BEAUTY</h4>
+            <ul className="space-y-2 text-gray-300">
+              <li>
+                <Link href="#" className="hover:underline">
+                  KNOW YOUR ROUTINE
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="hover:underline">
+                  HAIR CARE 101
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="hover:underline">
+                  SKIN CARE 101
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="hover:underline">
+                  MAKEUP 101
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* column 5: HELP */}
+          <div className="text-sm">
+            <h4 className="font-semibold mb-4">HELP</h4>
+            <ul className="space-y-2 text-gray-300">
+              <li>
+                <Link href="#" className="hover:underline">
+                  CONTACT US
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="hover:underline">
+                  POINTS
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="hover:underline">
+                  FAQS
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="hover:underline">
+                  SHIPPING & DELIVERY
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="hover:underline">
+                  TERMS & CONDITIONS
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="hover:underline">
+                  REFUND & RETURN POLICY
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="hover:underline">
+                  TRADE LICENSE
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="hover:underline">
+                  PRIVACY POLICY
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="mt-12 pt-8 border-t border-gray-700 text-center text-gray-400 text-sm">
+          <div className="flex justify-center space-x-6 mb-4">
+            <Link href="#" className="hover:underline">
+              AUTHENTICITY
+            </Link>
+            <Link href="#" className="hover:underline">
+              TERMS & CONDITIONS
+            </Link>
+            <Link href="#" className="hover:underline">
+              PRIVACY POLICY
+            </Link>
+          </div>
+          <p>Copyright © 2025 Shajgoj Limited. All Right Reserved.</p>
+        </div>
       </div>
     </footer>
   );

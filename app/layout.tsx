@@ -7,6 +7,7 @@ import Navbar from "@/components/layout/Navbar/Navbar";
 import Footer from "@/components/layout/Footer/Footer";
 import { CartProvider } from "@/context/CartContext";
 import { Toaster } from "react-hot-toast";
+import FloatingCartButton from "@/components/cart/FloatingCartButton";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,6 +29,7 @@ export default function RootLayout({
           <Navbar />
           <main className="min-h-screen">{children}</main>
           <Footer />
+          <FloatingCartButton /> 
         </CartProvider>
       </body>
     </html>
