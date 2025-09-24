@@ -28,6 +28,10 @@ export interface BaseProduct {
   isNewArrival?: boolean;
   isSale?: boolean;
   categories?: string[];
+  rating?: number;
+  reviewCount?: number;
+  badges?: string[];
+  tags?: string[];
 }
 // সাইজ ভ্যারিয়েন্টসহ প্রোডাক্ট
 export interface ProductWithSizeVariants extends BaseProduct {

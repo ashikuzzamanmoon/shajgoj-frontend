@@ -1,61 +1,114 @@
-// components/products/ProductCard.tsx
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { Star, ShoppingBag } from "lucide-react";
 import { Product } from "@/types";
+import { useCart } from "@/context/CartContext";
+import toast from "react-hot-toast";
 
 interface ProductCardProps {
   product: Product;
 }
 
-const ProductCard = ({ product }: ProductCardProps) => {
-  const displayVariant = product.variants?.[0];
-
-  if (!displayVariant) {
-    return null;
-  }
+// রেটিং স্টার দেখানোর জন্য একটি Helper কম্পোনেন্ট
+const RenderStars = ({ rating = 0 }: { rating?: number }) => {
+  const totalStars = 5;
+  const fullStars = Math.round(rating);
+  const emptyStars = totalStars - fullStars;
 
   return (
-    <div className="hover:shadow-md h-full">
+    <div className="flex justify-center my-2">
+      {[...Array(fullStars)].map((_, i) => (
+        <Star
+          key={`full-${i}`}
+          size={16}
+          className="text-yellow-400 fill-yellow-400"
+        />
+      ))}
+      {[...Array(emptyStars)].map((_, i) => (
+        <Star key={`empty-${i}`} size={16} className="text-gray-300" />
+      ))}
+    </div>
+  );
+};
+
+const ProductCard = ({ product }: ProductCardProps) => {
+  const { addToCart } = useCart();
+  const displayVariant = product.variants?.[0];
+
+  if (!displayVariant) return null;
+
+  const handleAddToCart = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+    addToCart(
+      {
+        id: product.id,
+        brand: product.brand,
+        name: product.name,
+        image: product.image,
+      },
+      displayVariant,
+      1
+    );
+    toast.success(`${product.name} added to cart!`);
+  };
+
+  return (
+    <div className="border border-gray-300 rounded-lg overflow-hidden group transition-shadow hover:shadow-lg h-full flex flex-col">
       <Link
-        href={`/products/${product.id}`}
-        className="block group h-full flex flex-col"
+        href={`/products/${product.name.toLowerCase().replace(/ /g, "-")}`}
+        className="block flex-grow flex flex-col"
       >
-        <div className="relative p-4 rounded-md overflow-hidden">
+        <div className="relative bg-white p-4">
           <Image
             src={product.image}
             alt={product.name}
-            width={300}
-            height={300}
-            className="object-contain h-56 md:h-64 w-full transition-transform duration-300 group-hover:scale-105"
+            width={200}
+            height={200}
+            className="w-full h-48 object-contain transition-transform duration-300 group-hover:scale-105"
           />
           {displayVariant.discount > 0 && (
-            <div className="absolute top-3 right-6 bg-[#e3c886] text-black text-xs rounded-full w-12 md:w-14 h-12 md:h-14 flex flex-col items-center justify-center leading-tight">
-              <span>Up to</span>
-              <span>-{displayVariant.discount}%</span>
+            <div className="absolute top-0 left-0 bg-pink-500 text-white text-xs font-bold px-3 py-1 rounded-br-lg">
+              {displayVariant.discount}% OFF
             </div>
           )}
         </div>
-        <div className="md:mt-4 ml-4 text-center md:text-left flex-grow flex flex-col">
-          <p className="text-sm text-gray-500 tracking-widest">
-            {product.brand}
-          </p>
-          <h3 className="mt-1 font-medium text-sm text-gray-800 flex-grow">
+        <div className="p-4 pt-0 flex flex-col flex-grow text-center">
+          <h3 className="text-sm font-semibold text-gray-800 line-clamp-2 h-10">
             {product.name}
           </h3>
-          <p className="text-[10px] md:text-xs text-gray-400">{product.type}</p>
-          <div className="mt-2 text-sm">
-            <span className="block md:inline md:mr-2">From</span>
-            <div className="flex justify-center md:inline-flex items-baseline space-x-2">
-              <span className="text-gray-400 line-through">
+
+          <span className="my-2 inline-block mx-auto text-white bg-pink-500 text-xs font-semibold px-3 py-0.5 rounded-full">
+            SALE
+          </span>
+
+          <div className="flex items-baseline justify-center space-x-2 my-2">
+            {displayVariant.originalPrice > displayVariant.price && (
+              <p className="text-gray-400 line-through text-sm">
                 ৳{displayVariant.originalPrice.toLocaleString()}
-              </span>
-              <span className="text-[#e3c886] font-semibold">
-                ৳{displayVariant.price.toLocaleString()}
-              </span>
-            </div>
+              </p>
+            )}
+            <p className="text-pink-500 font-bold text-base">
+              ৳{displayVariant.price.toLocaleString()}
+            </p>
           </div>
+
+          <RenderStars rating={product.rating} />
+
+          <p className="text-sm text-gray-700 font-bold mt-auto pt-2">
+            {displayVariant.name}
+          </p>
         </div>
       </Link>
+      <button
+        onClick={handleAddToCart}
+        className="flex items-center justify-center w-full bg-purple-600 text-white py-2.5 font-semibold hover:bg-pink-500 transition-colors"
+      >
+        <ShoppingBag size={16} className="mr-2" />
+        ADD TO CART
+      </button>
     </div>
   );
 };

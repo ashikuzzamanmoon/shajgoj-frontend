@@ -18,7 +18,7 @@ const FloatingCartButton = () => {
                 <span className="text-[10px] font-bold mt-1">{itemCount} ITEMS</span>
             </div>
             {/* নিচের অংশ: মোট মূল্য */}
-            <div className="bg-pink-500 text-white px-3 py-2 text-sm font-bold w-full text-center rounded-bl-lg">
+            <div className="bg-pink-500 text-white px-2 py-2 text-xs font-bold w-full text-center rounded-bl-lg">
                 ৳{cartTotal.toLocaleString()}
             </div>
         </button>
