@@ -1,3 +1,5 @@
+// app/products/[slug]/page.tsx
+
 "use client";
 
 import { useState, useEffect } from "react";
@@ -12,27 +14,31 @@ import {
   Star,
   Minus,
   Plus,
-  ShoppingCart,
   Heart,
   ShieldCheck,
   Truck,
   RefreshCw,
   ChevronDown,
   ShoppingBag,
+  MapPin,
+  ChevronRight,
 } from "lucide-react";
+
+// components/products/ProductGallery.tsx থেকে ইম্পোর্ট করা হয়েছে
+import ProductGallery from "@/components/products/ProductGallery";
+// components/home/shared/ProductCarousel/ProductCarousel.tsx থেকে ইম্পোর্ট করা হয়েছে
 import ProductCarousel from "@/components/home/shared/ProductCarousel/ProductCarousel";
 
 const allProducts: Product[] = allProductsData as Product[];
 
-// Helper component for rendering star ratings
+// রেটিং স্টার দেখানোর জন্য Helper কম্পোনেন্ট
 const RenderStars = ({ rating = 0 }: { rating?: number }) => {
   const totalStars = 5;
   const fullStars = Math.floor(rating);
-  const halfStar = rating % 1 !== 0;
-  const emptyStars = totalStars - fullStars - (halfStar ? 1 : 0);
+  const emptyStars = totalStars - fullStars;
 
   return (
-    <div className="flex">
+    <div className="flex items-center">
       {[...Array(fullStars)].map((_, i) => (
         <Star
           key={`full-${i}`}
@@ -61,16 +67,14 @@ const ProductDetailsPage = () => {
 
   const [selectedVariant, setSelectedVariant] = useState<Variant | null>(null);
   const [quantity, setQuantity] = useState(1);
-  const [activeImage, setActiveImage] = useState(product?.image || "");
-  const [openAccordion, setOpenAccordion] = useState<string | null>(null);
+  const [openAccordion, setOpenAccordion] = useState<string | null>(
+    "Description"
+  );
   const { addToCart } = useCart();
 
   useEffect(() => {
-    if (product) {
-      setActiveImage(product.image);
-      if (product.variants && product.variants.length > 0) {
-        setSelectedVariant(product.variants[0]);
-      }
+    if (product && product.variants && product.variants.length > 0) {
+      setSelectedVariant(product.variants[0]);
     }
   }, [product]);
 
@@ -102,68 +106,82 @@ const ProductDetailsPage = () => {
         p.categories?.includes(product.categories?.[0] || "") &&
         p.id !== product.id
     )
-    .slice(0, 5);
-  const brandProducts = allProducts
-    .filter((p) => p.brand === product.brand && p.id !== product.id)
-    .slice(0, 5);
+    .slice(0, 10);
+
+  const frequentlyBought = allProducts.filter((p) => p.id === 2 || p.id === 18).slice(0, 2);
 
   const accordionData = [
     { title: "Description", content: product.description },
     { title: "How to Use", content: "Apply to clean, dry skin as needed." },
     { title: "Ingredients", content: "List of ingredients goes here." },
+    {
+      title: "Disclaimer",
+      content:
+        "Product color may slightly vary due to photographic lighting sources or your monitor settings.",
+    },
   ];
 
   return (
     <div className="bg-white">
       <div className="container mx-auto px-4 py-8">
+        {/* --- Breadcrumbs --- */}
+        <div className="flex items-center text-sm text-gray-500 mb-4">
+          <Link href="/" className="hover:text-pink-500">Home</Link>
+          {product.categories?.slice(0, 3).map((cat) => (
+            <div key={cat} className="flex items-center">
+              <ChevronRight size={16} className="mx-1" />
+              <Link href="#" className="hover:text-pink-500">{cat}</Link>
+            </div>
+          ))}
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-7 gap-8">
           {/* --- বাম কলাম: Main Content --- */}
           <div className="lg:col-span-5">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {/* Image Gallery */}
-              <div className="flex flex-col-reverse sm:flex-row gap-4">
-                <div className="flex sm:flex-col gap-3 justify-center">
-                  {galleryImages.map((img, index) => (
-                    <button
-                      key={index}
-                      onMouseEnter={() => setActiveImage(img)}
-                      className={`w-16 h-16 border-2 rounded-lg overflow-hidden transition-all ${
-                        activeImage === img
-                          ? "border-pink-500 shadow-md"
-                          : "border-gray-200"
-                      }`}
-                    >
-                      <Image
-                        src={img}
-                        alt={`Thumbnail ${index + 1}`}
-                        width={64}
-                        height={64}
-                        className="object-cover w-full h-full"
-                      />
-                    </button>
-                  ))}
-                </div>
-                <div className="flex-grow relative aspect-square border rounded-lg">
-                  <Image
-                    src={activeImage}
-                    alt={product.name}
-                    fill
-                    className="object-contain p-4"
-                  />
-                </div>
-              </div>
+              {/* --- Product Gallery Component --- */}
+              <ProductGallery
+                images={galleryImages}
+                productName={product.name}
+                discount={selectedVariant.discount || 0}
+              />
 
-              {/* Product Info */}
+              {/* --- Product Info --- */}
               <div>
-                <p className="text-lg font-semibold text-gray-800">
-                  {product.brand}
-                </p>
-                <h1 className="text-2xl font-bold mt-1">{product.name}</h1>
-                <div className="flex items-center space-x-2 mt-2">
+                <p className="text-md text-gray-500">{product.brand}</p>
+                <h1 className="text-xl font-bold mt-1 text-gray-800">
+                  {product.name}
+                </h1>
+                <div className="flex items-center space-x-4 mt-2">
                   <RenderStars rating={product.rating} />
                   <span className="text-sm text-gray-500">
                     ({product.reviewCount || 0} Reviews)
                   </span>
+                  <span className="text-sm text-green-600 font-semibold">
+                    In Stock
+                  </span>
+                </div>
+                
+                {/* --- Variant Selector --- */}
+                <div className="mt-4">
+                    <p className="text-sm font-semibold text-gray-700 mb-2">
+                        {product.variantType === 'color' ? 'Shade:' : 'Size:'} <span className="font-bold">{selectedVariant.name}</span>
+                    </p>
+                    <div className="flex flex-wrap gap-3">
+                        {product.variants.map(variant => (
+                            <button
+                                key={variant.id}
+                                onClick={() => setSelectedVariant(variant)}
+                                className={`flex items-center gap-2 p-1 border-2 rounded-md transition-all ${selectedVariant.id === variant.id ? 'border-pink-500' : 'border-gray-200'}`}
+                            >
+                                {/* ✅ TypeScript এরর সমাধান করা হয়েছে */}
+                                {'hexCode' in variant && (
+                                    <span style={{ backgroundColor: variant.hexCode }} className="w-6 h-6 rounded-full border"></span>
+                                )}
+                                <span className="text-sm px-2">{variant.name}</span>
+                            </button>
+                        ))}
+                    </div>
                 </div>
 
                 <div className="flex items-baseline space-x-3 mt-4">
@@ -199,16 +217,51 @@ const ProductDetailsPage = () => {
                 <div className="grid grid-cols-2 gap-4 mt-8">
                   <button
                     onClick={handleAddToCart}
-                    className="flex items-center justify-center w-full bg-purple-600 text-white py-3 rounded-md font-semibold hover:bg-pink-500 transition-colors"
+                    className="flex items-center justify-center w-full bg-pink-500 text-white py-3 rounded-md font-semibold hover:bg-pink-600 transition-colors"
                   >
-                    <ShoppingBag size={18} className="mr-2" /> ADD TO CART
+                    <ShoppingBag size={18} className="mr-2" /> ADD TO BAG
                   </button>
-                  <button className="flex items-center justify-center w-full bg-pink-500 text-white py-3 rounded-md font-semibold hover:bg-pink-600 transition-colors">
-                    BUY NOW
+                  <button className="flex items-center justify-center w-full border border-gray-300 text-gray-700 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors">
+                    <Heart size={18} className="mr-2" /> WISHLIST
                   </button>
                 </div>
               </div>
             </div>
+            
+            {/* --- Frequently Bought Together --- */}
+            {frequentlyBought.length > 0 && (
+                <div className="mt-12 border rounded-lg p-6">
+                    <h2 className="text-xl font-bold mb-4">Frequently Bought Together</h2>
+                    <div className="flex flex-col md:flex-row items-center gap-4">
+                        <div className="flex items-center gap-4">
+                            <div className="text-center">
+                                <Image src={product.image} alt={product.name} width={100} height={100} className="rounded-md border"/>
+                                <p className="text-xs mt-1 line-clamp-2">{product.name}</p>
+                            </div>
+                            
+                            <Plus size={24} className="text-gray-400"/>
+
+                            {frequentlyBought.map(item => (
+                                <div key={item.id} className="text-center">
+                                    <Image src={item.image} alt={item.name} width={100} height={100} className="rounded-md border"/>
+                                    <p className="text-xs mt-1 line-clamp-2">{item.name}</p>
+                                </div>
+                            ))}
+                        </div>
+                        <div className="md:ml-auto text-center md:text-left mt-4 md:mt-0 border-l md:pl-6">
+                            <p className="text-gray-600">Total Price:</p>
+                            <p className="text-2xl font-bold text-pink-500">
+                                ৳{(selectedVariant.price + frequentlyBought.reduce((acc, item) => acc + (item.variants?.[0]?.price || 0), 0)).toLocaleString()}
+                            </p>
+                            <button className="mt-2 w-full bg-purple-600 text-white py-2 px-4 rounded-md font-semibold hover:bg-purple-700 transition-colors">
+                                Add All to Bag
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
+
+
             {/* --- Accordions --- */}
             <div className="mt-12">
               {accordionData.map((item) => (
@@ -230,7 +283,9 @@ const ProductDetailsPage = () => {
                     />
                   </button>
                   {openAccordion === item.title && (
-                    <div className="pb-4 text-gray-600">{item.content}</div>
+                    <div className="pb-4 text-gray-600 prose">
+                      {item.content}
+                    </div>
                   )}
                 </div>
               ))}
@@ -251,11 +306,21 @@ const ProductDetailsPage = () => {
           <div className="lg:col-span-2 space-y-6">
             <div className="border rounded-lg p-4">
               <h3 className="font-semibold mb-3">Delivery Options</h3>
+              <div className="flex items-center text-sm text-gray-600 mb-3">
+                <MapPin size={20} className="text-gray-500 mr-2" />
+                <span>Dhaka, Dhaka North, Banani</span>
+                <button className="ml-auto text-blue-600 font-semibold">CHANGE</button>
+              </div>
               <div className="space-y-3 text-sm">
-                <div className="flex items-center">
-                  <Truck size={20} className="text-gray-500 mr-3" />
-                  <span>Home Delivery</span>
-                  <span className="ml-auto font-semibold">৳60</span>
+                <div className="flex items-start">
+                  <Truck size={20} className="text-gray-500 mr-3 mt-1" />
+                  <div>
+                    <div className="flex justify-between">
+                        <span className="font-semibold">Home Delivery</span>
+                        <span className="font-semibold">৳60</span>
+                    </div>
+                    <p className="text-xs text-gray-500">2-4 days</p>
+                  </div>
                 </div>
                 <div className="flex items-center">
                   <ShieldCheck size={20} className="text-gray-500 mr-3" />
@@ -276,43 +341,6 @@ const ProductDetailsPage = () => {
                 </div>
               </div>
             </div>
-            {/* --- More from this brand Section --- */}
-            {brandProducts.length > 0 && (
-              <div className="mt-8">
-                <h3 className="font-semibold mb-4 text-center">
-                  More from {product.brand}
-                </h3>
-                <div className="space-y-4">
-                  {brandProducts.map((p) => (
-                    <Link
-                      href={`/products/${p.name
-                        .toLowerCase()
-                        .replace(/ /g, "-")}`}
-                      key={p.id}
-                      className="flex items-center space-x-3 group"
-                    >
-                      <div className="w-16 h-16 border rounded-md overflow-hidden">
-                        <Image
-                          src={p.image}
-                          alt={p.name}
-                          width={64}
-                          height={64}
-                          className="w-full h-full object-contain"
-                        />
-                      </div>
-                      <div className="flex-grow">
-                        <p className="text-sm font-semibold group-hover:text-pink-500 transition-colors">
-                          {p.name}
-                        </p>
-                        <p className="text-pink-500 font-bold text-xs">
-                          ৳{p.variants?.[0]?.price.toLocaleString()}
-                        </p>
-                      </div>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            )}
           </div>
         </div>
       </div>
