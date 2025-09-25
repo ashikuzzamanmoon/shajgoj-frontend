@@ -1,16 +1,39 @@
 // components/products/AuthenticityBadges.tsx
-import { ShieldCheck, Truck } from "lucide-react";
+
+import { ShieldCheck, Lock, Headset } from "lucide-react";
+import React from "react";
+
+const badgeData = [
+  {
+    Icon: ShieldCheck,
+    text: "100% Genuine Products",
+  },
+  {
+    Icon: Lock,
+    text: "100% Secure Payments",
+  },
+  {
+    Icon: Headset,
+    text: "Help Center (+8809666737475)",
+  },
+];
 
 const AuthenticityBadges = () => {
   return (
-    <div className="flex items-center space-x-4">
-      <div className="flex items-center space-x-2 border border-[#2a676b] px-3 py-2 text-xs md:text-sm text-[#2a676b]">
-        <ShieldCheck size={18} className="text-[#2a676b]" />
-        <span>100% AUTHENTIC</span>
-      </div>
-      <div className="flex items-center space-x-2 border border-[#2a676b] px-3 py-2 text-xs md:text-sm text-[#2a676b]">
-        <Truck size={18} className="text-[#2a676b]" />
-        <span>OFFICIAL DISTRIBUTOR</span>
+    <div className="my-8 py-6">
+      <div className="container mx-auto grid grid-cols-3 gap-4 text-center">
+        {badgeData.map((badge, index) => (
+          <div
+            key={index}
+            className="flex flex-col items-center justify-center gap-3"
+          >
+            {/* Icon */}
+            <badge.Icon className="w-8 h-8 text-gray-600" strokeWidth={1.5} />
+            
+            {/* Text */}
+            <p className="text-sm font-medium text-gray-700">{badge.text}</p>
+          </div>
+        ))}
       </div>
     </div>
   );
