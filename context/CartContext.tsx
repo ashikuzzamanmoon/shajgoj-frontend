@@ -1,8 +1,10 @@
 // context/CartContext.tsx
 "use client";
 
-import { createContext, useState, useContext, ReactNode } from "react";
+import { createContext, useState, useContext, ReactNode, useEffect } from "react";
+import toast from "react-hot-toast";
 
+// Interface গুলো অপরিবর্তিত থাকবে
 interface Product {
   id: number;
   brand: string;
@@ -16,7 +18,7 @@ interface Variant {
   price: number;
 }
 
-interface CartItem {
+export interface CartItem { // এক্সপোর্ট করা হলো যাতে অন্য ফাইলে ব্যবহার করা যায়
   product: Product;
   variant: Variant;
   quantity: number;
@@ -34,13 +36,28 @@ interface CartContextType {
   clearCart: () => void;
 }
 
-// Context created
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
-// Provider component created
 export const CartProvider = ({ children }: { children: ReactNode }) => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
+
+  // ১. Local Storage থেকে ডেটা লোড করার জন্য useEffect
+  useEffect(() => {
+    try {
+      const storedCart = localStorage.getItem("shajgoj_cart");
+      if (storedCart) {
+        setCartItems(JSON.parse(storedCart));
+      }
+    } catch (error) {
+      console.error("Failed to parse cart from localStorage", error);
+    }
+  }, []);
+
+  // ২. কার্টে কোনো পরিবর্তন হলে Local Storage-এ সেভ করার জন্য useEffect
+  useEffect(() => {
+    localStorage.setItem("shajgoj_cart", JSON.stringify(cartItems));
+  }, [cartItems]);
 
   const toggleCart = () => setIsCartOpen(!isCartOpen);
 
@@ -58,13 +75,15 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
       }
       return [...prevItems, { product, variant, quantity }];
     });
-    setIsCartOpen(true); // Adding items to cart will open the cart.
+    setIsCartOpen(true);
+    toast.success(`${product.name} added to cart!`);
   };
 
   const removeFromCart = (variantId: number) => {
     setCartItems((prevItems) =>
       prevItems.filter((item) => item.variant.id !== variantId)
     );
+    toast.error("Item removed from cart");
   };
 
   const updateQuantity = (variantId: number, newQuantity: number) => {
@@ -91,6 +110,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
 
   return (
     <CartContext.Provider
+      // ৩. এখানে isCartOpen এবং toggleCart যোগ করা হয়েছে
       value={{
         cartItems,
         isCartOpen,
@@ -108,7 +128,6 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
-// Custom hook created
 export const useCart = () => {
   const context = useContext(CartContext);
   if (context === undefined) {

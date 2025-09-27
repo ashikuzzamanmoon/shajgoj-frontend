@@ -8,6 +8,7 @@ import { Transition } from "@headlessui/react";
 import { Search, Heart, User, ShoppingBag, Menu } from "lucide-react";
 import navigationData from "@/data/navigation.json";
 import MobileMenu from "./MobileMenu";
+import { useCart } from "@/context/CartContext";
 // import { useCart } from "@/context/CartContext";
 
 const pillColorClasses: { [key: string]: string } = {
@@ -27,7 +28,7 @@ interface NavigationItem {
 }
 
 const Navbar = () => {
-  // const { toggleCart, itemCount } = useCart();
+  const { toggleCart, itemCount } = useCart();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openMenu, setOpenMenu] = useState<string | null>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -75,10 +76,10 @@ const Navbar = () => {
                 <User size={16} />
                 <span>LOGIN</span>
               </button>
-              <button className="flex items-center space-x-2 bg-pink-500 text-white px-4 py-2 rounded-full text-sm font-semibold">
+              <button onClick={toggleCart} className="flex items-center space-x-2 bg-pink-500 text-white px-4 py-2 rounded-full text-sm font-semibold">
                 <ShoppingBag size={16} />
                 <span>BAG</span>
-                <span>(0)</span>
+                <span>({itemCount})</span>
               </button>
             </div>
           </div>

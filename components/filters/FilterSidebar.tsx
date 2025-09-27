@@ -1,172 +1,161 @@
 // components/filters/FilterSidebar.tsx
 "use client";
 
-import Slider from "rc-slider";
-import "rc-slider/assets/index.css";
+import { Disclosure } from "@headlessui/react";
+import { ChevronUp } from "lucide-react";
 
-// Props-এর জন্য টাইপ ডিফাইন করা হলো
-interface FilterSidebarProps {
+// Props Interfaces
+interface FilterOption {
+  name: string;
+  count: number;
+}
+interface Filters {
+  priceRange: [number, number];
   brands: string[];
-  genders: string[];
-  mainCategories: string[];
-  subCategories: string[];
-  sizes: string[];
-  filters: {
-    priceRange: [number, number];
-    brands: string[];
-    genders: string[];
-    mainCategories: string[];
-    subCategories: string[];
-    sizes: string[];
-  };
+  categories: string[];
+}
+
+interface FilterSidebarProps {
+  brands: FilterOption[];
+  categories: FilterOption[];
+  filters: Filters;
   onFilterChange: (type: string, value: string | [number, number]) => void;
 }
 
+// Reusable Filter Section Component
+const FilterSection = ({
+  title,
+  options,
+  filterKey,
+  filters,
+  onFilterChange,
+}: {
+  title: string;
+  options: FilterOption[];
+  filterKey: "brands" | "categories";
+  filters: Filters;
+  onFilterChange: (type: string, value: string | [number, number]) => void;
+}) => (
+  <Disclosure defaultOpen>
+    {({ open }) => (
+      <div>
+        <Disclosure.Button className="flex w-full justify-between rounded-lg bg-gray-100 px-4 py-2 text-left text-sm font-medium text-gray-900 hover:bg-gray-200">
+          <span>{title}</span>
+          <ChevronUp
+            className={`${
+              open ? "rotate-180 transform" : ""
+            } h-5 w-5 text-gray-500 transition-transform`}
+          />
+        </Disclosure.Button>
+        <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">
+          <div className="space-y-2">
+            {options.map((option) => (
+              <div
+                key={option.name}
+                className="flex items-center justify-between"
+              >
+                <div className="flex items-center">
+                  <input
+                    id={`${filterKey}-${option.name}`}
+                    type="checkbox"
+                    checked={filters[filterKey].includes(option.name)}
+                    onChange={() => onFilterChange(filterKey, option.name)}
+                    className="h-4 w-4 rounded border-gray-300 text-purple-600 focus:ring-purple-500"
+                  />
+                  <label
+                    htmlFor={`${filterKey}-${option.name}`}
+                    className="ml-3 text-gray-600 cursor-pointer"
+                  >
+                    {option.name}
+                  </label>
+                </div>
+                <span className="text-xs px-2 bg-gray-200 rounded-3xl text-gray-500">{option.count}</span>
+              </div>
+            ))}
+          </div>
+        </Disclosure.Panel>
+      </div>
+    )}
+  </Disclosure>
+);
+
+// Price Filter Component
+const PriceFilter = ({
+  filters,
+  onFilterChange,
+}: {
+  filters: Filters;
+  onFilterChange: (type: string, value: string | [number, number]) => void;
+}) => {
+  const maxPrice = 20000;
+
+  return (
+    <Disclosure defaultOpen>
+      {({ open }) => (
+        <div>
+          <Disclosure.Button className="flex w-full justify-between rounded-lg bg-gray-100 px-4 py-2 text-left text-sm font-medium text-gray-900 hover:bg-gray-200">
+            <span>Price</span>
+            <ChevronUp
+              className={`${
+                open ? "rotate-180 transform" : ""
+              } h-5 w-5 text-gray-500 transition-transform`}
+            />
+          </Disclosure.Button>
+          <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">
+            <div className="space-y-4">
+              <input
+                type="range"
+                min="0"
+                max={maxPrice}
+                value={filters.priceRange[1]}
+                onChange={(e) =>
+                  onFilterChange("priceRange", [
+                    filters.priceRange[0],
+                    parseInt(e.target.value),
+                  ])
+                }
+                className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+              />
+              <div className="flex justify-between text-xs text-gray-600">
+                <span>৳0</span>
+                <span>Up to ৳{filters.priceRange[1].toLocaleString()}</span>
+                <span>৳{maxPrice.toLocaleString()}</span>
+              </div>
+            </div>
+          </Disclosure.Panel>
+        </div>
+      )}
+    </Disclosure>
+  );
+};
+
 const FilterSidebar = ({
   brands,
-  genders,
-  mainCategories,
-  subCategories,
-  sizes,
+  categories,
   filters,
   onFilterChange,
 }: FilterSidebarProps) => {
   return (
-    <aside className="border rounded-md w-full md:w-1/4 lg:w-1/5">
-      {/* Price Filter */}
-      <div className="p-4 border-b">
-        <h3 className="font-semibold mb-4">PRICE</h3>
-        <Slider
-          range
-          min={0}
-          max={100000}
-          value={filters.priceRange}
-          onChange={(value) =>
-            onFilterChange("priceRange", value as [number, number])
-          }
-          className="mb-4"
-        />
-        <div className="flex items-center justify-between text-sm mt-2">
-          <span>৳{filters.priceRange[0].toLocaleString()}</span>
-          <span>৳{filters.priceRange[1].toLocaleString()}</span>
-        </div>
-      </div>
+    <div className="w-full space-y-6">
+      <h2 className="text-xl font-bold border-b pb-2">Filter By</h2>
 
-      {/* Main Category Filter */}
-      {mainCategories.length > 0 && (
-        <div className="p-4 border-b">
-          <h3 className="font-semibold mb-2">CATEGORY</h3>
-          <div className="space-y-1 text-sm h-48 overflow-y-auto">
-            {mainCategories.map((category) => (
-              <div key={category}>
-                <input
-                  type="checkbox"
-                  id={category}
-                  value={category}
-                  checked={filters.mainCategories.includes(category)}
-                  onChange={(e) =>
-                    onFilterChange("mainCategories", e.target.value)
-                  }
-                />
-                <label htmlFor={category} className="ml-2 uppercase">
-                  {category}
-                </label>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {/* Sub Category Filter */}
-      {subCategories.length > 0 && (
-        <div className="p-4 border-b">
-          <h3 className="font-semibold mb-2">SUB CATEGORY</h3>
-          <div className="space-y-1 text-sm h-48 overflow-y-auto">
-            {subCategories.map((subCategory) => (
-              <div key={subCategory}>
-                <input
-                  type="checkbox"
-                  id={subCategory}
-                  value={subCategory}
-                  checked={filters.subCategories.includes(subCategory)}
-                  onChange={(e) =>
-                    onFilterChange("subCategories", e.target.value)
-                  }
-                />
-                <label htmlFor={subCategory} className="ml-2 uppercase">
-                  {subCategory}
-                </label>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {/* Gender Filter */}
-      <div className="p-4 border-b">
-        <h3 className="font-semibold mb-2">GENDER</h3>
-        <div className="space-y-1 text-sm">
-          {genders.map((gender) => (
-            <div key={gender}>
-              <input
-                type="checkbox"
-                id={gender}
-                value={gender}
-                checked={filters.genders.includes(gender)}
-                onChange={(e) => onFilterChange("genders", e.target.value)}
-              />
-              <label htmlFor={gender} className="ml-2 uppercase">
-                {gender}
-              </label>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Brands Filter */}
-      <div className="p-4 border-b">
-        <h3 className="font-semibold mb-2">BRANDS</h3>
-        <div className="space-y-1 text-sm h-48 overflow-y-auto">
-          {brands.map((brand) => (
-            <div key={brand}>
-              <input
-                type="checkbox"
-                id={brand}
-                value={brand}
-                checked={filters.brands.includes(brand)}
-                onChange={(e) => onFilterChange("brands", e.target.value)}
-              />
-              <label htmlFor={brand} className="ml-2 uppercase">
-                {brand}
-              </label>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Size Filter */}
-      {sizes.length > 0 && (
-        <div className="p-4">
-          <h3 className="font-semibold mb-2">SIZE</h3>
-          <div className="space-y-1 text-sm h-48 overflow-y-auto">
-            {sizes.map((size) => (
-              <div key={size}>
-                <input
-                  type="checkbox"
-                  id={size}
-                  value={size}
-                  checked={filters.sizes.includes(size)}
-                  onChange={(e) => onFilterChange("sizes", e.target.value)}
-                />
-                <label htmlFor={size} className="ml-2 uppercase">
-                  {size}
-                </label>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-    </aside>
+      <PriceFilter filters={filters} onFilterChange={onFilterChange} />
+      <FilterSection
+        title="Product Categories"
+        options={categories}
+        filterKey="categories"
+        filters={filters}
+        onFilterChange={onFilterChange}
+      />
+      <FilterSection
+        title="Brands"
+        options={brands}
+        filterKey="brands"
+        filters={filters}
+        onFilterChange={onFilterChange}
+      />
+    </div>
   );
 };
+
 export default FilterSidebar;

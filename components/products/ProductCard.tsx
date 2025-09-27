@@ -11,7 +11,7 @@ interface ProductCardProps {
   product: Product;
 }
 
-// রেটিং স্টার দেখানোর জন্য একটি Helper কম্পোনেন্ট
+// A helper component for rating star
 const RenderStars = ({ rating = 0 }: { rating?: number }) => {
   const totalStars = 5;
   const fullStars = Math.round(rating);

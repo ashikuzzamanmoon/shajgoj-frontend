@@ -9,7 +9,7 @@ import FilterSidebar from "@/components/filters/FilterSidebar";
 import ProductGrid from "@/components/products/ProductGrid";
 import Link from "next/link";
 import { Menu, Transition } from "@headlessui/react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Search } from "lucide-react";
 
 const allProducts: Product[] = allProductsData as Product[];
 
@@ -21,14 +21,6 @@ const sortOptions = [
   { name: "Price: High to Low", value: "price-desc" },
 ];
 
-const categoryLinks = [
-  { name: "FRAGRANCE", href: "/category/fragrance" },
-  { name: "SKINCARE", href: "/category/skincare" },
-  { name: "MAKEUP", href: "/category/makeup" },
-  { name: "HAIR AND BODY", href: "/category/hair-and-body" },
-  { name: "CANDLE AND HOME", href: "/category/candle-and-home" },
-];
-
 const CategoryPage = () => {
   const params = useParams();
   const slug = params.slug as string;
@@ -37,20 +29,21 @@ const CategoryPage = () => {
   const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
   const [sortOption, setSortOption] = useState("default");
   const [pageTitle, setPageTitle] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
 
   const [filters, setFilters] = useState({
     priceRange: [0, 100000] as [number, number],
     brands: [] as string[],
-    genders: [] as string[],
-    mainCategories: [] as string[],
-    subCategories: [] as string[],
-    sizes: [] as string[],
+    categories: [] as string[], 
   });
 
   useEffect(() => {
     if (!slug) return;
     let productsToShow: Product[] = [];
     let title = "";
+
+    const formattedSlug = slug.replace(/-/g, " ");
+
     if (slug === "all") {
       productsToShow = allProducts;
       title = "All Products";
@@ -61,11 +54,11 @@ const CategoryPage = () => {
       productsToShow = allProducts.filter((p) => p.isNewArrival);
       title = "New Arrivals";
     } else {
-      const formattedSlug = slug.replace(/-/g, " ");
       productsToShow = allProducts.filter((product) =>
         product.categories?.some((cat) => cat.toLowerCase() === formattedSlug)
       );
       title = formattedSlug;
+
       if (productsToShow.length === 0) {
         productsToShow = allProducts.filter(
           (p) =>
@@ -77,12 +70,22 @@ const CategoryPage = () => {
       }
     }
     setInitialProducts(productsToShow);
+    setFilteredProducts(productsToShow); 
     setPageTitle(title.toUpperCase());
   }, [slug]);
 
-  // ফিল্টার পরিবর্তন হলে প্রোডাক্ট তালিকা আপডেট করার মূল লজিক
+  // The main logic for updating the product list when the filter changes
   useEffect(() => {
     let products = [...initialProducts];
+
+    // Search filter
+    if (searchQuery) {
+      products = products.filter(
+        (p) =>
+          p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          p.brand.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+    }
 
     // Price filter
     products = products.filter((p) => {
@@ -93,96 +96,59 @@ const CategoryPage = () => {
     if (filters.brands.length > 0) {
       products = products.filter((p) => filters.brands.includes(p.brand));
     }
-    // Gender filter
-    if (filters.genders.length > 0) {
+    // Category filter
+    if (filters.categories.length > 0) {
       products = products.filter((p) =>
-        p.categories?.some((cat) => filters.genders.includes(cat))
+        p.categories?.some((cat) => filters.categories.includes(cat))
       );
     }
-    // Main Category filter
-    if (filters.mainCategories.length > 0) {
-      products = products.filter((p) =>
-        p.categories?.some((cat) => filters.mainCategories.includes(cat))
-      );
-    }
-    // SubCategory filter
-    if (filters.subCategories.length > 0) {
-      products = products.filter((p) =>
-        p.categories?.some((cat) => filters.subCategories.includes(cat))
-      );
-    }
-    // Size filter
-    if (filters.sizes.length > 0) {
-      products = products.filter((p) =>
-        p.variants.some((v) => filters.sizes.includes(v.name))
-      );
-    }
-
     setFilteredProducts(products);
-  }, [filters, initialProducts]);
+  }, [filters, initialProducts, searchQuery]);
 
-  // ফিল্টার অপশনগুলো ডাইনামিকভাবে তৈরি করা
   const filterOptions = useMemo(() => {
-    const brands = [...new Set(initialProducts.map((p) => p.brand))].sort();
-    const allCategories = initialProducts.flatMap((p) => p.categories || []);
-    const mainCategories = [
-      ...new Set(
-        allCategories.filter((c) =>
-          [
-            "Fragrance",
-            "Makeup",
-            "Skincare",
-            "Hair and Body",
-            "Candle and Home",
-          ].includes(c)
-        )
-      ),
-    ];
-    const genders = [
-      ...new Set(
-        allCategories.filter((c) => ["Men", "Women", "Unisex"].includes(c))
-      ),
-    ];
-    const subCategories = [
-      ...new Set(
-        allCategories.filter(
-          (c) => !mainCategories.includes(c) && !genders.includes(c)
-        )
-      ),
-    ].sort();
-    const sizes = [
-      ...new Set(
-        initialProducts
-          .filter((p) => p.variantType === "size")
-          .flatMap((p) => p.variants.map((v) => v.name))
-      ),
-    ].sort();
-    return { brands, genders, mainCategories, subCategories, sizes };
+    const getCounts = (key: "brand" | "category") => {
+      const counts: { [key: string]: number } = {};
+      initialProducts.forEach((product) => {
+        if (key === "brand") {
+          const brand = product.brand;
+          if (brand) {
+            counts[brand] = (counts[brand] || 0) + 1;
+          }
+        } else if (key === "category") {
+          product.categories?.forEach((cat) => {
+            counts[cat] = (counts[cat] || 0) + 1;
+          });
+        }
+      });
+      return Object.entries(counts)
+        .map(([name, count]) => ({ name, count }))
+        .sort((a, b) => a.name.localeCompare(b.name));
+    };
+
+    const brands = getCounts("brand");
+    const categories = getCounts("category");
+
+    return { brands, categories };
   }, [initialProducts]);
 
-  // ফিল্টার পরিবর্তনের জন্য হ্যান্ডলার ফাংশন আপডেট করা হয়েছে
   const handleFilterChange = (
     type: string,
     value: string | [number, number]
   ) => {
-    setFilters((prevFilters) => {
-      const newFilters = { ...prevFilters };
+    setFilters((prev) => {
+      const newFilters = { ...prev };
       const key = type as keyof typeof newFilters;
 
       if (key === "priceRange") {
         newFilters[key] = value as [number, number];
       } else if (Array.isArray(newFilters[key])) {
-        const currentValues = prevFilters[key] as string[];
+        const currentValues = newFilters[key] as string[];
         const stringValue = value as string;
-
-        // নতুন কপি তৈরি করা হচ্ছে
         if (currentValues.includes(stringValue)) {
-          // আইটেমটি অ্যারে থেকে বাদ দেওয়া হচ্ছে
           (newFilters[key] as string[]) = currentValues.filter(
             (v) => v !== stringValue
           );
         } else {
-          // আইটেমটি অ্যারেতে যোগ করা হচ্ছে
           (newFilters[key] as string[]) = [...currentValues, stringValue];
         }
       }
@@ -190,119 +156,112 @@ const CategoryPage = () => {
     });
   };
 
-  const resetFilters = () => {
-    setFilters({
-      priceRange: [0, 100000],
-      brands: [],
-      genders: [],
-      mainCategories: [],
-      subCategories: [],
-      sizes: [],
-    });
-  };
+  // sorting logic
+  const sortedProducts = useMemo(() => {
+    const productsToSort = [...filteredProducts];
+    switch (sortOption) {
+      case "name-asc":
+        return productsToSort.sort((a, b) => a.name.localeCompare(b.name));
+      case "name-desc":
+        return productsToSort.sort((a, b) => b.name.localeCompare(a.name));
+      case "price-asc":
+        return productsToSort.sort(
+          (a, b) => (a.variants[0]?.price || 0) - (b.variants[0]?.price || 0)
+        );
+      case "price-desc":
+        return productsToSort.sort(
+          (a, b) => (b.variants[0]?.price || 0) - (a.variants[0]?.price || 0)
+        );
+      default:
+        return productsToSort;
+    }
+  }, [filteredProducts, sortOption]);
 
   return (
-    <div className="container mx-auto px-6 py-8">
-      <div className="text-sm text-gray-500 mb-6">
-        <Link href="/" className="hover:underline">
-          HOME
-        </Link>
-        <span className="mx-2">/</span>
-        <span className="text-gray-800 uppercase">{pageTitle}</span>
-      </div>
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        {/* Left Column: Filter Sidebar */}
+        <aside className="lg:col-span-1">
+          <FilterSidebar
+            brands={filterOptions.brands}
+            categories={filterOptions.categories}
+            filters={filters}
+            onFilterChange={handleFilterChange}
+          />
+        </aside>
 
-      <div className="bg-gray-100 p-8 rounded-lg mb-8 text-center">
-        <h1 className="text-3xl font-bold">{pageTitle}</h1>
-        <p className="mt-2 text-gray-600">Discover our curated selection.</p>
-      </div>
+        {/* Right Column: Products */}
+        <main className="lg:col-span-3">
+          {/* Breadcrumbs and Title */}
+          <div className="text-sm text-gray-500 mb-4">
+            <Link href="/" className="hover:underline">
+              HOME
+            </Link>
+            <span className="mx-2">/</span>
+            <span className="text-gray-800 font-semibold uppercase">
+              {pageTitle}
+            </span>
+          </div>
 
-      {/* --- টপ ফিল্টার বার (আপনার ডিজাইন অনুযায়ী) --- */}
-      <div className="flex flex-col md:flex-row justify-between items-center mb-6 p-4">
-        <div className="flex items-center space-x-4">
-          <span className="font-semibold">FILTER RESULTS</span>
-          <button
-            onClick={resetFilters}
-            className="text-xs text-gray-500 hover:underline md:cursor-pointer"
-          >
-            Reset Filters
-          </button>
-        </div>
-        <div className="flex flex-col space-y-2 w-full mt-4 md:flex-row md:space-y-0 md:space-x-2 md:w-auto md:mt-0">
-          {/* Category Dropdown */}
-          <Menu as="div" className="relative w-full md:w-auto">
-            <Menu.Button className="flex items-center justify-between w-full text-sm border px-3 py-1.5 rounded-md">
-              <span>CATEGORY</span>
-              <ChevronDown size={16} className="ml-1" />
-            </Menu.Button>
-            <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right bg-white shadow-lg rounded-md z-10">
-              <div className="p-1">
-                {categoryLinks.map((link) => (
-                  <Menu.Item key={link.href}>
-                    {({ active }) => (
-                      <Link
-                        href={link.href}
-                        className={`${
-                          active ? "bg-gray-100" : ""
-                        } block px-4 py-2 text-sm text-gray-700 rounded-md`}
-                      >
-                        {link.name}
-                      </Link>
-                    )}
-                  </Menu.Item>
-                ))}
-              </div>
-            </Menu.Items>
-          </Menu>
-          {/* Sort By Dropdown */}
-          <Menu as="div" className="relative w-full md:w-48">
-            <Menu.Button className="flex items-center justify-between w-full text-sm border px-3 py-1.5 rounded-md">
-              <span>
-                {sortOptions.find((opt) => opt.value === sortOption)?.name}
-              </span>
-              <ChevronDown size={16} className="ml-1" />
-            </Menu.Button>
-            <Transition
-              enter="transition ease-out duration-100"
-              enterFrom="transform opacity-0 scale-95"
-              enterTo="transform opacity-100 scale-100"
-              leave="transition ease-in duration-75"
-              leaveFrom="transform opacity-100 scale-100"
-              leaveTo="transform opacity-0 scale-95"
-            >
-              <Menu.Items className="absolute right-0 mt-2 w-full origin-top-right bg-white shadow-lg rounded-md z-10">
-                <div className="p-1">
-                  {sortOptions.map((option) => (
-                    <Menu.Item key={option.value}>
-                      {({ active }) => (
-                        <button
-                          onClick={() => setSortOption(option.value)}
-                          className={`${
-                            active ? "bg-gray-100" : ""
-                          } group flex rounded-md items-center w-full px-4 py-2 text-sm text-gray-700`}
-                        >
-                          {option.name}
-                        </button>
-                      )}
-                    </Menu.Item>
-                  ))}
-                </div>
-              </Menu.Items>
-            </Transition>
-          </Menu>
-        </div>
-      </div>
+          {/* নতুন সার্চ সেকশন */}
+          <div className="relative mb-6">
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Search products by name or brand..."
+              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:ring-purple-500 focus:border-purple-500"
+            />
+            <Search
+              size={20}
+              className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+            />
+          </div>
 
-      <div className="flex flex-col md:flex-row gap-8">
-        <FilterSidebar
-          brands={filterOptions.brands}
-          genders={filterOptions.genders}
-          mainCategories={filterOptions.mainCategories}
-          subCategories={filterOptions.subCategories}
-          sizes={filterOptions.sizes}
-          filters={filters}
-          onFilterChange={handleFilterChange}
-        />
-        <ProductGrid products={filteredProducts} />
+          {/* Top bar with count and sorting */}
+          <div className="flex flex-col sm:flex-row justify-between items-center mb-6">
+            <p className="text-gray-600 mb-2 sm:mb-0">
+              Showing {sortedProducts.length} products
+            </p>
+            <Menu as="div" className="relative w-full sm:w-48">
+              <Menu.Button className="flex items-center justify-between w-full text-sm border border-gray-300 px-3 py-1.5 rounded-md bg-white hover:bg-gray-50">
+                <span>
+                  {sortOptions.find((opt) => opt.value === sortOption)?.name}
+                </span>
+                <ChevronDown size={16} className="ml-1" />
+              </Menu.Button>
+              <Transition
+                enter="transition ease-out duration-100"
+                enterFrom="transform opacity-0 scale-95"
+                enterTo="transform opacity-100 scale-100"
+                leave="transition ease-in duration-75"
+                leaveFrom="transform opacity-100 scale-100"
+                leaveTo="transform opacity-0 scale-95"
+              >
+                <Menu.Items className="absolute right-0 mt-2 w-full origin-top-right bg-white shadow-lg rounded-md z-10">
+                  <div className="p-1">
+                    {sortOptions.map((option) => (
+                      <Menu.Item key={option.value}>
+                        {({ active }) => (
+                          <button
+                            onClick={() => setSortOption(option.value)}
+                            className={`${
+                              active ? "bg-gray-100" : ""
+                            } group flex rounded-md items-center w-full px-4 py-2 text-sm text-gray-700`}
+                          >
+                            {option.name}
+                          </button>
+                        )}
+                      </Menu.Item>
+                    ))}
+                  </div>
+                </Menu.Items>
+              </Transition>
+            </Menu>
+          </div>
+
+          <ProductGrid products={sortedProducts} />
+        </main>
       </div>
     </div>
   );
