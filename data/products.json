@@ -3,13 +3,24 @@
     "id": 1,
     "name": "Maybelline Superstay Vinyl Ink Liquid Lipstick",
     "brand": "Maybelline",
-    "image": "/images/products/maybelline-lipstick.jpg",
-    "gallery": ["/images/products/maybelline-lipstick-thumb1.jpg"],
+    "image": "/images/products/maybelline-lipstick.webp",
+    "gallery": [
+      "/images/products/maybelline-lipstick-thumb1.webp",
+      "/images/products/maybelline-lipstick-thumb2.webp",
+      "/images/products/maybelline-lipstick-thumb3.webp"
+    ],
     "description": "A long-lasting liquid lipstick with a shiny vinyl finish. Stays put for up to 16 hours without smudging or transferring.",
-    "categories": ["Makeup", "Lips", "Lipstick", "Women"],
+    "categories": [
+      "Makeup",
+      "Lips",
+      "Lipstick",
+      "Women"
+    ],
     "rating": 4.8,
     "reviewCount": 102,
-    "badges": ["-15%"],
+    "badges": [
+      "-15%"
+    ],
     "variantType": "color",
     "variants": [
       {
@@ -35,13 +46,26 @@
     "id": 2,
     "name": "The Body Shop Tea Tree Skin Clearing Facial Wash",
     "brand": "The Body Shop",
-    "image": "/images/products/bodyshop-facewash.jpg",
-    "gallery": [],
+    "image": "/images/products/bodyshop-facewash.webp",
+    "gallery": [
+      "/images/products/bodyshop-facewash-thumb1.webp",
+      "/images/products/bodyshop-facewash-thumb2.webp",
+      "/images/products/bodyshop-facewash-thumb3.webp"
+    ],
     "description": "A refreshing facial wash for oily, blemished skin. Enriched with Community Fair Trade tea tree oil from Kenya.",
-    "categories": ["Skincare", "Face", "Facewash", "Acne", "Oil Control"],
+    "categories": [
+      "Skincare",
+      "Skin",
+      "Face",
+      "Facewash",
+      "Acne",
+      "Oil Control"
+    ],
     "rating": 4.9,
     "reviewCount": 250,
-    "badges": ["-10%"],
+    "badges": [
+      "-10%"
+    ],
     "variantType": "size",
     "variants": [
       {
@@ -65,8 +89,10 @@
     "id": 3,
     "name": "L'Oreal Paris Hyaluron Moisture Shampoo",
     "brand": "L'Oreal",
-    "image": "/images/products/loreal-shampoo.jpg",
-    "gallery": [],
+    "image": "/images/products/loreal-shampoo.webp",
+    "gallery": [
+      "/images/products/loreal-shampoo.webp"
+    ],
     "description": "Hydrating shampoo for dehydrated hair, infused with hyaluronic acid to provide long-lasting hydration.",
     "categories": [
       "Hair",
@@ -77,7 +103,9 @@
     ],
     "rating": 4.5,
     "reviewCount": 88,
-    "badges": ["BOGO"],
+    "badges": [
+      "BOGO"
+    ],
     "variantType": "size",
     "variants": [
       {
@@ -93,13 +121,23 @@
     "id": 4,
     "name": "Technic Mega Sultry 12 Colors Eyeshadow Palette",
     "brand": "Technic",
-    "image": "/images/products/technic-eyeshadow.jpg",
-    "gallery": [],
+    "image": "/images/products/technic-eyeshadow.webp",
+    "gallery": [
+      "/images/products/technic-eyeshadow-thumb1.webp",
+      "/images/products/technic-eyeshadow-thumb2.webp"
+    ],
     "description": "A versatile eyeshadow palette with 12 shades of warm, sultry tones in matte and shimmer finishes.",
-    "categories": ["Makeup", "Eyes", "Eye Shadow", "Women"],
+    "categories": [
+      "Makeup",
+      "Eyes",
+      "Eye Shadow",
+      "Women"
+    ],
     "rating": 4.6,
     "reviewCount": 45,
-    "badges": ["-20%"],
+    "badges": [
+      "-20%"
+    ],
     "variantType": "color",
     "variants": [
       {
@@ -117,10 +155,18 @@
     "id": 5,
     "name": "NIVEA Men Deep Impact Body Spray",
     "brand": "NIVEA Men",
-    "image": "/images/products/nivea-deo.jpg",
-    "gallery": [],
+    "image": "/images/products/nivea-deo.webp",
+    "gallery": [
+      "/images/products/nivea-deo-thumb1.webp",
+      "/images/products/nivea-deo-thumb2.webp",
+      "/images/products/nivea-deo-thumb3.webp"
+    ],
     "description": "A deodorant for men that provides a feeling of deep cleansing and freshness. With a masculine dark wood scent.",
-    "categories": ["Personal care", "Deodorants/Roll-Ons", "Men"],
+    "categories": [
+      "Personal care",
+      "Deodorants/Roll-Ons",
+      "Men"
+    ],
     "rating": 4.7,
     "reviewCount": 150,
     "badges": [],
@@ -139,11 +185,16 @@
     "id": 6,
     "name": "Pond's Super Light Gel Moisturizer",
     "brand": "Pond's",
-    "image": "/images/products/ponds-gel.jpg",
-    "gallery": [],
+    "image": "/images/products/ponds-gel.webp",
+    "gallery": [
+      "/images/products/ponds-gel-thumb1.webp",
+      "/images/products/ponds-gel-thumb2.webp",
+      "/images/products/ponds-gel-thumb3.webp"
+    ],
     "description": "A super lightweight and non-oily gel formula, infused with Hyaluronic Acid and Vitamin E for a water-fresh glow.",
     "categories": [
       "Skincare",
+      "Skin",
       "Moisturizer",
       "Face",
       "Dry Skin Remedy",
@@ -151,7 +202,9 @@
     ],
     "rating": 4.8,
     "reviewCount": 310,
-    "badges": ["-33%"],
+    "badges": [
+      "-33%"
+    ],
     "variantType": "size",
     "variants": [
       {
@@ -168,8 +221,12 @@
     "id": 7,
     "name": "Focallure Matte Liquid Lipstick",
     "brand": "Focallure",
-    "image": "/images/products/focallure-lipstick.jpg",
-    "gallery": [],
+    "image": "/images/products/focallure-lipstick.webp",
+    "gallery": [
+      "/images/products/focallure-lipstick-thumb1.webp",
+      "/images/products/focallure-lipstick-thumb2.webp",
+      "/images/products/focallure-lipstick-thumb3.webp"
+    ],
     "description": "A high-pigment, long-lasting matte liquid lipstick that offers a comfortable, non-drying feel.",
     "categories": [
       "Makeup",
@@ -180,7 +237,9 @@
     ],
     "rating": 4.4,
     "reviewCount": 95,
-    "badges": ["CLEARANCE SALE"],
+    "badges": [
+      "CLEARANCE SALE"
+    ],
     "variantType": "color",
     "variants": [
       {
@@ -198,8 +257,10 @@
     "id": 8,
     "name": "Senora Sanitary Napkin Belt System",
     "brand": "Senora",
-    "image": "/images/products/senora-napkin.jpg",
-    "gallery": [],
+    "image": "/images/products/senora-napkin.webp",
+    "gallery": [
+      "/images/products/senora-napkin.webp"
+    ],
     "description": "Comfortable and secure sanitary napkins with a belt system for reliable protection.",
     "categories": [
       "Personal care",
@@ -226,8 +287,12 @@
     "id": 9,
     "name": "Parachute Naturale Anti Hair Fall Shampoo",
     "brand": "Parachute",
-    "image": "/images/products/parachute-shampoo.jpg",
-    "gallery": [],
+    "image": "/images/products/parachute-shampoo.webp",
+    "gallery": [
+      "/images/products/parachute-shampoo-thumb1.webp",
+      "/images/products/parachute-shampoo-thumb2.webp",
+      "/images/products/parachute-shampoo.webp"
+    ],
     "description": "Enriched with the goodness of Coconut Milk and Onion, this shampoo helps in reducing hair fall.",
     "categories": [
       "Hair",
@@ -255,13 +320,23 @@
     "id": 10,
     "name": "AXE Signature Intense Body Perfume",
     "brand": "AXE",
-    "image": "/images/products/axe-perfume.jpg",
-    "gallery": [],
+    "image": "/images/products/axe-perfume.webp",
+    "gallery": [
+      "/images/products/axe-perfume-thumb1.webp",
+      "/images/products/axe-perfume-thumb2.webp",
+      "/images/products/axe-perfume.webp"
+    ],
     "description": "A woody and musky fragrance that is strong, long-lasting and perfect for the man who makes an impression.",
-    "categories": ["Fragrance", "Body Mist/Spray", "Men"],
+    "categories": [
+      "Fragrance",
+      "Body Mist/Spray",
+      "Men"
+    ],
     "rating": 4.6,
     "reviewCount": 112,
-    "badges": ["-10%"],
+    "badges": [
+      "-10%"
+    ],
     "variantType": "size",
     "variants": [
       {
@@ -277,10 +352,15 @@
     "id": 11,
     "name": "Bio-Oil Skincare Oil",
     "brand": "Bio-Oil",
-    "image": "/images/products/bio-oil.jpg",
+    "image": "/images/products/bio-oil.webp",
     "gallery": [],
     "description": "A specialist skincare product that helps improve the appearance of scars, stretch marks and uneven skin tone.",
-    "categories": ["Skincare", "Body", "Body Oil", "Anti-Stretch Mark Creams"],
+    "categories": [
+      "Skincare",
+      "Body",
+      "Body Oil",
+      "Anti-Stretch Mark Creams"
+    ],
     "rating": 4.9,
     "reviewCount": 405,
     "badges": [],
@@ -306,13 +386,20 @@
     "id": 12,
     "name": "Nirvana Color Face Palette - Strobe and Glow",
     "brand": "Nirvana",
-    "image": "/images/products/nirvana-palette.jpg",
+    "image": "/images/products/nirvana-palette.webp",
     "gallery": [],
     "description": "A versatile face palette featuring blush, bronzer, and highlighter shades for a complete glowing look.",
-    "categories": ["Makeup", "Face", "Face Palette", "Women"],
+    "categories": [
+      "Makeup",
+      "Face",
+      "Face Palette",
+      "Women"
+    ],
     "rating": 4.7,
     "reviewCount": 33,
-    "badges": ["-25%"],
+    "badges": [
+      "-25%"
+    ],
     "variantType": "color",
     "variants": [
       {
@@ -330,10 +417,14 @@
     "id": 13,
     "name": "Johnsons Baby Powder",
     "brand": "Johnson's",
-    "image": "/images/products/johnsons-powder.jpg",
+    "image": "/images/products/johnsons-powder.webp",
     "gallery": [],
     "description": "Classic baby powder that keeps baby's skin comfortable, dry, and feeling soft.",
-    "categories": ["Mom and Baby", "Baby Care", "Talcum Powder"],
+    "categories": [
+      "Mom and Baby",
+      "Baby Care",
+      "Talcum Powder"
+    ],
     "rating": 4.9,
     "reviewCount": 500,
     "badges": [],
@@ -359,7 +450,7 @@
     "id": 14,
     "name": "Ribana Saffron Goats Milk Soap",
     "brand": "Ribana",
-    "image": "/images/products/ribana-soap.jpg",
+    "image": "/images/products/ribana-soap.webp",
     "gallery": [],
     "description": "A handmade soap with saffron and goat's milk, known for its skin brightening and moisturizing properties.",
     "categories": [
@@ -371,7 +462,9 @@
     ],
     "rating": 4.8,
     "reviewCount": 89,
-    "badges": ["-5%"],
+    "badges": [
+      "-5%"
+    ],
     "variantType": "size",
     "variants": [
       {
@@ -388,10 +481,14 @@
     "id": 15,
     "name": "Kemei Professional Hair Straightener",
     "brand": "Kemei",
-    "image": "/images/products/kemei-straightener.jpg",
+    "image": "/images/products/kemei-straightener.webp",
     "gallery": [],
     "description": "A professional-grade hair straightener with ceramic plates for smooth, frizz-free styling.",
-    "categories": ["Hair", "Tools and Accessories", "Hair straightener"],
+    "categories": [
+      "Hair",
+      "Tools and Accessories",
+      "Hair straightener"
+    ],
     "rating": 4.5,
     "reviewCount": 55,
     "badges": [],
@@ -412,10 +509,14 @@
     "id": 16,
     "name": "Shein Basic Bodysuit",
     "brand": "Shein",
-    "image": "/images/products/shein-bodysuit.jpg",
+    "image": "/images/products/shein-bodysuit.webp",
     "gallery": [],
     "description": "A comfortable and versatile basic bodysuit, perfect for layering or wearing on its own.",
-    "categories": ["Undergarments", "Bodysuits and Body Shapers", "Women"],
+    "categories": [
+      "Undergarments",
+      "Bodysuits and Body Shapers",
+      "Women"
+    ],
     "rating": 4.3,
     "reviewCount": 21,
     "badges": [],
@@ -441,10 +542,14 @@
     "id": 17,
     "name": "Jewellery Box Organizer",
     "brand": "Unbranded",
-    "image": "/images/products/jewellery-box.jpg",
+    "image": "/images/products/jewellery-box.webp",
     "gallery": [],
     "description": "A stylish and functional box to organize your precious jewellery.",
-    "categories": ["Jewellery", "Accessories", "Women"],
+    "categories": [
+      "Jewellery",
+      "Accessories",
+      "Women"
+    ],
     "rating": 4.6,
     "reviewCount": 15,
     "badges": [],
@@ -464,13 +569,21 @@
     "id": 18,
     "name": "Garnier Micellar Cleansing Water",
     "brand": "Garnier",
-    "image": "/images/products/garnier-micellar.jpg",
+    "image": "/images/products/garnier-micellar.webp",
     "gallery": [],
     "description": "An all-in-one cleanser that removes makeup, cleanses and soothes skin without rinsing.",
-    "categories": ["Skincare", "Face", "Makeup Remover", "Cleanser", "Combo"],
+    "categories": [
+      "Skincare",
+      "Face",
+      "Makeup Remover",
+      "Cleanser",
+      "Combo"
+    ],
     "rating": 4.9,
     "reviewCount": 620,
-    "badges": ["COMBO"],
+    "badges": [
+      "COMBO"
+    ],
     "variantType": "size",
     "variants": [
       {
@@ -493,7 +606,7 @@
     "id": 19,
     "name": "Simple Kind to Skin Refreshing Facial Wash",
     "brand": "Simple",
-    "image": "/images/products/simple-facewash.jpg",
+    "image": "/images/products/simple-facewash.webp",
     "gallery": [],
     "description": "A 100% soap-free facial wash that is kind to skin, leaving it feeling clean, fresh and hydrated.",
     "categories": [
@@ -505,7 +618,9 @@
     ],
     "rating": 4.8,
     "reviewCount": 350,
-    "badges": ["-10%"],
+    "badges": [
+      "-10%"
+    ],
     "variantType": "size",
     "variants": [
       {
@@ -522,7 +637,7 @@
     "id": 20,
     "name": "The Ordinary Niacinamide 10% + Zinc 1%",
     "brand": "The Ordinary",
-    "image": "/images/products/ordinary-serum.jpg",
+    "image": "/images/products/ordinary-serum.webp",
     "gallery": [],
     "description": "A high-strength vitamin and mineral blemish formula that reduces the appearance of skin blemishes and congestion.",
     "categories": [
@@ -558,11 +673,18 @@
     "id": 21,
     "name": "Pond's Bright Beauty Face Wash",
     "brand": "Pond's",
-    "image": "/images/products/ponds-bright-facewash.jpg",
-    "categories": ["Skincare", "Face", "Facewash", "Ponds Beauty Deals"],
+    "image": "/images/products/ponds-bright-facewash.webp",
+    "categories": [
+      "Skincare",
+      "Face",
+      "Facewash",
+      "Ponds Beauty Deals"
+    ],
     "rating": 4.7,
     "reviewCount": 450,
-    "badges": ["-15%"],
+    "badges": [
+      "-15%"
+    ],
     "variantType": "size",
     "variants": [
       {
@@ -579,7 +701,7 @@
     "id": 22,
     "name": "Pond's Age Miracle Day Cream",
     "brand": "Pond's",
-    "image": "/images/products/ponds-age-miracle.jpg",
+    "image": "/images/products/ponds-age-miracle.webp",
     "categories": [
       "Skincare",
       "Face",
@@ -589,7 +711,9 @@
     ],
     "rating": 4.8,
     "reviewCount": 280,
-    "badges": ["-25%"],
+    "badges": [
+      "-25%"
+    ],
     "variantType": "size",
     "variants": [
       {
@@ -606,7 +730,7 @@
     "id": 23,
     "name": "Pond's White Beauty Mineral Clay Face Wash",
     "brand": "Pond's",
-    "image": "/images/products/ponds-clay-facewash.jpg",
+    "image": "/images/products/ponds-clay-facewash.webp",
     "categories": [
       "Skincare",
       "Face",
@@ -616,7 +740,9 @@
     ],
     "rating": 4.6,
     "reviewCount": 190,
-    "badges": ["-10%"],
+    "badges": [
+      "-10%"
+    ],
     "variantType": "size",
     "variants": [
       {
@@ -633,8 +759,12 @@
     "id": 24,
     "name": "Neutrogena Hydro Boost Water Gel",
     "brand": "Neutrogena",
-    "image": "/images/products/neutrogena-hydro-boost.jpg",
-    "categories": ["Skincare", "Moisturizer", "Neutrogena"],
+    "image": "/images/products/neutrogena-hydro-boost.webp",
+    "categories": [
+      "Skincare",
+      "Moisturizer",
+      "Neutrogena"
+    ],
     "rating": 4.9,
     "reviewCount": 850,
     "badges": [],
@@ -653,8 +783,12 @@
     "id": 25,
     "name": "CeraVe Hydrating Cleanser",
     "brand": "CeraVe",
-    "image": "/images/products/cerave-cleanser.jpg",
-    "categories": ["Skincare", "Cleanser", "CeraVe"],
+    "image": "/images/products/cerave-cleanser.webp",
+    "categories": [
+      "Skincare",
+      "Cleanser",
+      "CeraVe"
+    ],
     "rating": 4.9,
     "reviewCount": 980,
     "badges": [],
@@ -673,7 +807,7 @@
     "id": 26,
     "name": "Skin Cafe 100% Natural Rose Water Face Mist",
     "brand": "Skin Cafe",
-    "image": "/images/products/skin-cafe-mist.jpg",
+    "image": "/images/products/skin-cafe-mist.webp",
     "categories": [
       "Skincare",
       "Face",
