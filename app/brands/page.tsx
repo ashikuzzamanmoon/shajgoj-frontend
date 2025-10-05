@@ -26,7 +26,7 @@ const BrandsPage = () => {
       <div className="container mx-auto px-6 py-12">
         <div className="text-center mb-12">
           <h1 className="text-2xl md:text-3xl tracking-[0.3em] text-gray-700">
-            ALL OUR BRANDS IN SUNDORA
+            ALL OUR BRANDS IN SHAJGOJ
           </h1>
         </div>
         <div className="flex flex-wrap justify-center items-center gap-x-3 gap-y-1 text-sm text-gray-500 mb-12">

@@ -15,21 +15,16 @@ import {
   Minus,
   Plus,
   Heart,
-  ShieldCheck,
   ShoppingBag,
   ChevronRight,
 } from "lucide-react";
-
-// components/products/ProductGallery.tsx থেকে ইম্পোর্ট করা হয়েছে
 import ProductGallery from "@/components/products/ProductGallery";
-// components/home/shared/ProductCarousel/ProductCarousel.tsx থেকে ইম্পোর্ট করা হয়েছে
-import ProductCarousel from "@/components/home/shared/ProductCarousel/ProductCarousel";
 import AuthenticityBadges from "@/components/products/AuthenticityBadges";
 import ProductCard from "@/components/products/ProductCard";
 
 const allProducts: Product[] = allProductsData as Product[];
 
-// রেটিং স্টার দেখানোর জন্য Helper কম্পোনেন্ট
+// Helper component for star rating
 const RenderStars = ({ rating = 0 }: { rating?: number }) => {
   const totalStars = 5;
   const fullStars = Math.floor(rating);
@@ -65,7 +60,7 @@ const ProductDetailsPage = () => {
 
   const [selectedVariant, setSelectedVariant] = useState<Variant | null>(null);
   const [quantity, setQuantity] = useState(1);
-  const [activeTab, setActiveTab] = useState("Description"); // Accordion state replaced with tab state
+  const [activeTab, setActiveTab] = useState("Description");
   const { addToCart } = useCart();
 
   useEffect(() => {
@@ -112,6 +107,38 @@ const ProductDetailsPage = () => {
   const frequentlyBought = allProducts
     .filter((p) => p.id === 2 || p.id === 18)
     .slice(0, 2);
+
+  const handleAddAllToCart = () => {
+    // Add current product with selected variant
+    addToCart(
+      {
+        id: product.id,
+        brand: product.brand,
+        name: product.name,
+        image: product.image,
+      },
+      selectedVariant,
+      1
+    );
+
+    // Add all frequently bought products
+    frequentlyBought.forEach((item) => {
+      if (item.variants && item.variants.length > 0) {
+        addToCart(
+          {
+            id: item.id,
+            brand: item.brand,
+            name: item.name,
+            image: item.image,
+          },
+          item.variants[0],
+          1
+        );
+      }
+    });
+
+    toast.success("All products added to cart!");
+  };
 
   const tabData = [
     { title: "Description", content: product.description },
@@ -365,7 +392,10 @@ const ProductDetailsPage = () => {
                       )
                     ).toLocaleString()}
                   </p>
-                  <button className="mt-2 w-full sm:w-auto bg-purple-600 text-white py-2 px-6 rounded-md font-semibold hover:bg-purple-700 transition-colors">
+                  <button
+                    onClick={handleAddAllToCart}
+                    className="mt-2 w-full sm:w-auto bg-purple-600 text-white py-2 px-6 rounded-md font-semibold hover:bg-purple-700 transition-colors"
+                  >
                     Add All to Bag
                   </button>
                 </div>
@@ -376,9 +406,7 @@ const ProductDetailsPage = () => {
           {/* --- You May Also Like Section --- */}
           {relatedProducts.length > 0 && (
             <div className="mt-16">
-              <h2 className="text-xl font-bold mb-8">
-                YOU MAY ALSO LIKE
-              </h2>
+              <h2 className="text-xl font-bold mb-8">YOU MAY ALSO LIKE</h2>
 
               {/* Create a grid container to hold the cards */}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

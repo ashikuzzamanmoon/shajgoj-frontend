@@ -353,10 +353,15 @@
     "name": "Bio-Oil Skincare Oil",
     "brand": "Bio-Oil",
     "image": "/images/products/bio-oil.webp",
-    "gallery": [],
+    "gallery": [
+      "/images/products/bio-oil-thumb1.webp",
+      "/images/products/bio-oil-thumb2.webp",
+      "/images/products/bio-oil.webp"
+    ],
     "description": "A specialist skincare product that helps improve the appearance of scars, stretch marks and uneven skin tone.",
     "categories": [
       "Skincare",
+      "Skin",
       "Body",
       "Body Oil",
       "Anti-Stretch Mark Creams"
@@ -387,7 +392,11 @@
     "name": "Nirvana Color Face Palette - Strobe and Glow",
     "brand": "Nirvana",
     "image": "/images/products/nirvana-palette.webp",
-    "gallery": [],
+    "gallery": [
+      "/images/products/nirvana-palette-thumb1.webp",
+      "/images/products/nirvana-palette-thumb2.webp",
+      "/images/products/nirvana-palette-thumb3.webp"
+    ],
     "description": "A versatile face palette featuring blush, bronzer, and highlighter shades for a complete glowing look.",
     "categories": [
       "Makeup",
@@ -418,7 +427,11 @@
     "name": "Johnsons Baby Powder",
     "brand": "Johnson's",
     "image": "/images/products/johnsons-powder.webp",
-    "gallery": [],
+    "gallery": [
+      "/images/products/johnsons-powder-thubm1.webp",
+      "/images/products/johnsons-powder-thumb2.webp",
+      "/images/products/johnsons-powder.webp"
+    ],
     "description": "Classic baby powder that keeps baby's skin comfortable, dry, and feeling soft.",
     "categories": [
       "Mom and Baby",
@@ -451,10 +464,14 @@
     "name": "Ribana Saffron Goats Milk Soap",
     "brand": "Ribana",
     "image": "/images/products/ribana-soap.webp",
-    "gallery": [],
+    "gallery": [
+      "/images/products/ribana-soap.webp",
+      "/images/products/ribana-soap-thumb1.webp"
+    ],
     "description": "A handmade soap with saffron and goat's milk, known for its skin brightening and moisturizing properties.",
     "categories": [
       "Skincare",
+      "Skin",
       "Bath and Shower",
       "Soaps",
       "K-Beauty",
@@ -482,7 +499,12 @@
     "name": "Kemei Professional Hair Straightener",
     "brand": "Kemei",
     "image": "/images/products/kemei-straightener.webp",
-    "gallery": [],
+    "gallery": [
+      "/images/products/kemei-straightener-thumb1.webp",
+      "/images/products/kemei-straightener-thumb2.webp",
+      "/images/products/kemei-straightener-thumb3.webp",
+      "/images/products/kemei-straightener.webp"
+    ],
     "description": "A professional-grade hair straightener with ceramic plates for smooth, frizz-free styling.",
     "categories": [
       "Hair",
@@ -510,7 +532,10 @@
     "name": "Shein Basic Bodysuit",
     "brand": "Shein",
     "image": "/images/products/shein-bodysuit.webp",
-    "gallery": [],
+    "gallery": [
+      "/images/products/shein-bodysuit.webp",
+      "/images/products/shein-bodysuit-thumb1.webp"
+    ],
     "description": "A comfortable and versatile basic bodysuit, perfect for layering or wearing on its own.",
     "categories": [
       "Undergarments",
@@ -543,7 +568,10 @@
     "name": "Jewellery Box Organizer",
     "brand": "Unbranded",
     "image": "/images/products/jewellery-box.webp",
-    "gallery": [],
+    "gallery": [
+      "/images/products/jewellery-box.webp",
+      "/images/products/jewellery-box.webp"
+    ],
     "description": "A stylish and functional box to organize your precious jewellery.",
     "categories": [
       "Jewellery",
@@ -570,10 +598,14 @@
     "name": "Garnier Micellar Cleansing Water",
     "brand": "Garnier",
     "image": "/images/products/garnier-micellar.webp",
-    "gallery": [],
+    "gallery": [
+      "/images/products/garnier-micellar.webp",
+      "/images/products/garnier-micellar-thumb1.webp"
+    ],
     "description": "An all-in-one cleanser that removes makeup, cleanses and soothes skin without rinsing.",
     "categories": [
       "Skincare",
+      "Skin",
       "Face",
       "Makeup Remover",
       "Cleanser",
@@ -607,10 +639,14 @@
     "name": "Simple Kind to Skin Refreshing Facial Wash",
     "brand": "Simple",
     "image": "/images/products/simple-facewash.webp",
-    "gallery": [],
+    "gallery": [
+      "/images/products/simple-facewash-thumb1.webp",
+      "/images/products/simple-facewash.webp"
+    ],
     "description": "A 100% soap-free facial wash that is kind to skin, leaving it feeling clean, fresh and hydrated.",
     "categories": [
       "Skincare",
+      "Skin",
       "Face",
       "Facewash",
       "K-Beauty",
@@ -638,10 +674,14 @@
     "name": "The Ordinary Niacinamide 10% + Zinc 1%",
     "brand": "The Ordinary",
     "image": "/images/products/ordinary-serum.webp",
-    "gallery": [],
+    "gallery": [
+      "/images/products/ordinary-serum.webp",
+      "/images/products/ordinary-serum-thumb1.webp"
+    ],
     "description": "A high-strength vitamin and mineral blemish formula that reduces the appearance of skin blemishes and congestion.",
     "categories": [
       "Skincare",
+      "Skin",
       "Serums and Oils",
       "Face",
       "Oil Control",
@@ -674,8 +714,12 @@
     "name": "Pond's Bright Beauty Face Wash",
     "brand": "Pond's",
     "image": "/images/products/ponds-bright-facewash.webp",
+    "gallery": [
+      "/images/products/ponds-bright-facewash.webp"
+    ],
     "categories": [
       "Skincare",
+      "Skin",
       "Face",
       "Facewash",
       "Ponds Beauty Deals"
@@ -702,8 +746,13 @@
     "name": "Pond's Age Miracle Day Cream",
     "brand": "Pond's",
     "image": "/images/products/ponds-age-miracle.webp",
+    "gallery": [
+      "/images/products/ponds-age-miracle-thumb1.webp",
+      "/images/products/ponds-age-miracle.webp"
+    ],
     "categories": [
       "Skincare",
+      "Skin",
       "Face",
       "Day Cream",
       "Anti Aging",
@@ -731,8 +780,12 @@
     "name": "Pond's White Beauty Mineral Clay Face Wash",
     "brand": "Pond's",
     "image": "/images/products/ponds-clay-facewash.webp",
+    "gallery": [
+      "/images/products/ponds-clay-facewash.webp"
+    ],
     "categories": [
       "Skincare",
+      "Skin",
       "Face",
       "Facewash",
       "Oil Control",
@@ -760,8 +813,14 @@
     "name": "Neutrogena Hydro Boost Water Gel",
     "brand": "Neutrogena",
     "image": "/images/products/neutrogena-hydro-boost.webp",
+    "gallery": [
+      "/images/products/neutrogena-hydro-boost-thumb1.webp",
+      "/images/products/neutrogena-hydro-boost-thumb2.webp",
+      "/images/products/neutrogena-hydro-boost-thumb3.webp"
+    ],
     "categories": [
       "Skincare",
+      "Skin",
       "Moisturizer",
       "Neutrogena"
     ],
@@ -784,8 +843,12 @@
     "name": "CeraVe Hydrating Cleanser",
     "brand": "CeraVe",
     "image": "/images/products/cerave-cleanser.webp",
+    "gallery": [
+      "/images/products/cerave-cleanser.webp"
+    ],
     "categories": [
       "Skincare",
+      "Skin",
       "Cleanser",
       "CeraVe"
     ],
@@ -808,8 +871,14 @@
     "name": "Skin Cafe 100% Natural Rose Water Face Mist",
     "brand": "Skin Cafe",
     "image": "/images/products/skin-cafe-mist.webp",
+    "gallery": [
+      "/images/products/skin-cafe-mist-thumb1.webp",
+      "/images/products/skin-cafe-mist-thumb2.webp",
+      "/images/products/skin-cafe-mist-thumb3.webp"
+    ],
     "categories": [
       "Skincare",
+      "Skin",
       "Face",
       "Toner & Mist",
       "Skin Cafe",

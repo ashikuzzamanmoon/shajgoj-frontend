@@ -1,47 +1,94 @@
 [
   {
-    "name": "Acqua Di Parma",
-    "logo": "/images/brands/acqua-di-parma.webp",
-    "href": "/category/acqua-di-parma"
+    "name": "Maybelline",
+    "href": "/category/maybelline"
   },
   {
-    "name": "Banderas",
-    "logo": "/images/brands/banderas.webp",
-    "href": "/category/acqua-di-parma"
+    "name": "The Body Shop",
+    "href": "/category/the-body-shop"
   },
   {
-    "name": "United Colors of Benetton",
-    "logo": "/images/brands/benetton.webp",
-    "href": "/category/benetton"
+    "name": "L'Oreal",
+    "href": "/category/loreal"
   },
   {
-    "name": "Carolina Herrera",
-    "logo": "/images/brands/carolina-herrera.webp",
-    "href": "/category/carolina-herrera"
+    "name": "Technic",
+    "href": "/category/technic"
   },
   {
-    "name": "Giorgio Armani",
-    "logo": "/images/brands/giorgio-armani.webp",
-    "href": "/category/giorgio-armani"
+    "name": "NIVEA Men",
+    "href": "/category/nivea-men"
   },
   {
-    "name": "Jean Paul",
-    "logo": "/images/brands/jean-paul.webp",
-    "href": "/category/jean-paul-gaultier"
+    "name": "Pond's",
+    "href": "/category/ponds"
   },
   {
-    "name": "Prada",
-    "logo": "/images/brands/prada.webp",
-    "href": "/category/prada"
+    "name": "Focallure",
+    "href": "/category/focallure"
   },
   {
-    "name": "Rabanne",
-    "logo": "/images/brands/rabanne.webp",
-    "href": "/category/rabanne"
+    "name": "Senora",
+    "href": "/category/senora"
   },
   {
-    "name": "Yankee Candle",
-    "logo": "/images/brands/yankee-candle.webp",
-    "href": "/category/yankee-candle"
+    "name": "Parachute",
+    "href": "/category/parachute"
+  },
+  {
+    "name": "AXE",
+    "href": "/category/axe"
+  },
+  {
+    "name": "Bio-Oil",
+    "href": "/category/bio-oil"
+  },
+  {
+    "name": "Nirvana",
+    "href": "/category/nirvana"
+  },
+  {
+    "name": "Johnson's",
+    "href": "/category/johnsons"
+  },
+  {
+    "name": "Ribana",
+    "href": "/category/ribana"
+  },
+  {
+    "name": "Kemei",
+    "href": "/category/kemei"
+  },
+  {
+    "name": "Shein",
+    "href": "/category/shein"
+  },
+  {
+    "name": "Unbranded",
+    "href": "/category/unbranded"
+  },
+  {
+    "name": "Garnier",
+    "href": "/category/garnier"
+  },
+  {
+    "name": "Simple",
+    "href": "/category/simple"
+  },
+  {
+    "name": "The Ordinary",
+    "href": "/category/the-ordinary"
+  },
+  {
+    "name": "Neutrogena",
+    "href": "/category/neutrogena"
+  },
+  {
+    "name": "CeraVe",
+    "href": "/category/cerave"
+  },
+  {
+    "name": "Skin Cafe",
+    "href": "/category/skin-cafe"
   }
 ]
