@@ -13,6 +13,7 @@ import MobileMenu from "./MobileMenu";
 import { useCart } from "@/context/CartContext";
 import allProductsData from "@/data/products.json";
 import { Product } from "@/types";
+import AuthModal from "@/components/auth/AuthModal";
 
 const allProducts: Product[] = allProductsData as Product[];
 
@@ -40,6 +41,7 @@ const Navbar = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState<Product[]>([]);
   const [showSearchDropdown, setShowSearchDropdown] = useState(false);
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const searchRef = useRef<HTMLDivElement>(null);
 
@@ -62,7 +64,10 @@ const Navbar = () => {
   // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
+      if (
+        searchRef.current &&
+        !searchRef.current.contains(event.target as Node)
+      ) {
         setShowSearchDropdown(false);
       }
     };
@@ -75,7 +80,7 @@ const Navbar = () => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
     setOpenMenu(name);
   };
-  
+
   const handleMouseLeave = () => {
     timeoutRef.current = setTimeout(() => setOpenMenu(null), 200);
   };
@@ -83,38 +88,41 @@ const Navbar = () => {
   const getProductLink = (product: Product) => {
     if (product.categories && product.categories.length > 0) {
       const categoryMappings: { [key: string]: string } = {
-        "skincare": "skin",
+        skincare: "skin",
         "personal care": "personal-care",
         "mom and baby": "mom-and-baby",
         "mom & baby": "mom-and-baby",
-        "fragrance": "fragrance",
-        "undergarments": "undergarments",
-        "jewellery": "jewellery",
-        "makeup": "makeup",
-        "hair": "hair",
-        "men": "men"
+        fragrance: "fragrance",
+        undergarments: "undergarments",
+        jewellery: "jewellery",
+        makeup: "makeup",
+        hair: "hair",
+        men: "men",
       };
-      
+
       for (const category of product.categories) {
         const categoryLower = category.toLowerCase();
-        
+
         if (categoryMappings[categoryLower]) {
           return `/category/${categoryMappings[categoryLower]}`;
         }
-        
-        if (["makeup", "hair", "skincare", "fragrance", "men", "women"].some(
-          main => categoryLower.includes(main) || main.includes(categoryLower)
-        )) {
+
+        if (
+          ["makeup", "hair", "skincare", "fragrance", "men", "women"].some(
+            (main) =>
+              categoryLower.includes(main) || main.includes(categoryLower)
+          )
+        ) {
           return `/category/${categoryLower.replace(/\s+/g, "-")}`;
         }
       }
     }
-    
+
     if (product.brand) {
       const brandSlug = product.brand.toLowerCase().replace(/\s+/g, "-");
       return `/category/${brandSlug}`;
     }
-    
+
     return "/category/all";
   };
 
@@ -149,7 +157,7 @@ const Navbar = () => {
                 BRANDS
               </Link>
             </div>
-            
+
             {/* Desktop Search */}
             <div className="w-full max-w-md mx-8 relative" ref={searchRef}>
               <div className="relative">
@@ -165,7 +173,7 @@ const Navbar = () => {
                   className="w-full pl-10 pr-4 py-2 border-2 border-pink-500 rounded-full focus:outline-none focus:ring-2 focus:ring-pink-300"
                 />
               </div>
-              
+
               {/* Search Dropdown */}
               {showSearchDropdown && (
                 <div className="absolute top-full left-0 right-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-lg max-h-96 overflow-y-auto z-50">
@@ -223,7 +231,9 @@ const Navbar = () => {
                           {getUniqueBrands().map((brand) => (
                             <Link
                               key={brand}
-                              href={`/category/${brand.toLowerCase().replace(/ /g, "-")}`}
+                              href={`/category/${brand
+                                .toLowerCase()
+                                .replace(/ /g, "-")}`}
                               onClick={() => {
                                 setShowSearchDropdown(false);
                                 setSearchQuery("");
@@ -253,15 +263,23 @@ const Navbar = () => {
             </div>
 
             <div className="flex items-center space-x-3">
-              <button className="flex items-center space-x-2 bg-gray-800 text-white px-4 py-2 rounded-full text-sm font-semibold">
-                <Heart size={16} />
-                <span>WISHLIST</span>
-              </button>
-              <button className="flex items-center space-x-2 bg-gray-100 text-gray-800 px-4 py-2 rounded-full text-sm font-semibold">
+              <Link href="/wishlist">
+                <button className="flex items-center space-x-2 bg-gray-800 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                  <Heart size={16} />
+                  <span>WISHLIST</span>
+                </button>
+              </Link>
+              <button
+                onClick={() => setIsAuthModalOpen(true)}
+                className="flex items-center space-x-2 bg-gray-100 text-gray-800 px-4 py-2 rounded-full text-sm font-semibold"
+              >
                 <User size={16} />
                 <span>LOGIN</span>
               </button>
-              <button onClick={toggleCart} className="flex items-center space-x-2 bg-pink-500 text-white px-4 py-2 rounded-full text-sm font-semibold">
+              <button
+                onClick={toggleCart}
+                className="flex items-center space-x-2 bg-pink-500 text-white px-4 py-2 rounded-full text-sm font-semibold"
+              >
                 <ShoppingBag size={16} />
                 <span>BAG</span>
                 <span>({itemCount})</span>
@@ -278,11 +296,9 @@ const Navbar = () => {
               <Link href="/" className="text-2xl font-bold tracking-widest">
                 SHAJGOJ
               </Link>
-              <div>
-                {/* any icon here */}
-              </div>
+              <div>{/* any icon here */}</div>
             </div>
-            
+
             {/* Mobile Search */}
             <div className="relative mb-3" ref={searchRef}>
               <span className="absolute inset-y-0 left-0 flex items-center pl-3">
@@ -296,7 +312,7 @@ const Navbar = () => {
                 placeholder="Search for Products, Brands..."
                 className="w-full pl-10 pr-4 py-2 border-2 border-pink-500 rounded-full focus:outline-none focus:ring-1 focus:ring-pink-400"
               />
-              
+
               {/* Mobile Search Dropdown */}
               {showSearchDropdown && (
                 <div className="absolute top-full left-0 right-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-lg max-h-80 overflow-y-auto z-50">
@@ -439,6 +455,11 @@ const Navbar = () => {
       </header>
 
       <MobileMenu isOpen={isMobileMenuOpen} setIsOpen={setIsMobileMenuOpen} />
+      {/* Auth Modal */}
+      <AuthModal
+        isOpen={isAuthModalOpen}
+        onClose={() => setIsAuthModalOpen(false)}
+      />
     </>
   );
 };

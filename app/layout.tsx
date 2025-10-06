@@ -9,6 +9,7 @@ import { CartProvider } from "@/context/CartContext";
 import { Toaster } from "react-hot-toast";
 import FloatingCartButton from "@/components/cart/FloatingCartButton";
 import CartDrawer from "@/components/cart/CartDrawer";
+import { WishlistProvider } from "@/context/WishlistContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,12 +27,14 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning={true}>
       <body className={inter.className}>
         <CartProvider>
-          <Toaster position="top-right" />
-          <Navbar />
-          <main className="min-h-screen">{children}</main>
-          <Footer />
-          <FloatingCartButton />
-          <CartDrawer />
+          <WishlistProvider>
+            <Toaster position="top-right" />
+            <Navbar />
+            <main className="min-h-screen">{children}</main>
+            <Footer />
+            <FloatingCartButton />
+            <CartDrawer />
+          </WishlistProvider>
         </CartProvider>
       </body>
     </html>

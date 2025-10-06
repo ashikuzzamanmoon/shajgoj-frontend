@@ -9,6 +9,7 @@ import Link from "next/link";
 import allProductsData from "@/data/products.json";
 import { Product, Variant } from "@/types";
 import { useCart } from "@/context/CartContext";
+import { useWishlist } from "@/context/WishlistContext";
 import toast from "react-hot-toast";
 import {
   Star,
@@ -62,6 +63,7 @@ const ProductDetailsPage = () => {
   const [quantity, setQuantity] = useState(1);
   const [activeTab, setActiveTab] = useState("Description");
   const { addToCart } = useCart();
+  const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist();
 
   useEffect(() => {
     if (product && product.variants && product.variants.length > 0) {
@@ -81,6 +83,8 @@ const ProductDetailsPage = () => {
   }
 
   const galleryImages = [product.image, ...(product.gallery || [])];
+  const inWishlist = isInWishlist(product.id);
+
 
   const handleAddToCart = () => {
     addToCart(
@@ -94,6 +98,22 @@ const ProductDetailsPage = () => {
       quantity
     );
     toast.success(`${product.name} added to cart!`);
+  };
+
+    const handleWishlistToggle = () => {
+    if (inWishlist) {
+      removeFromWishlist(product.id);
+      toast.success("Removed from wishlist!");
+    } else {
+      addToWishlist({
+        id: product.id,
+        name: product.name,
+        brand: product.brand,
+        image: product.image,
+        price: selectedVariant.price,
+      });
+      toast.success("Added to wishlist!");
+    }
   };
 
   const relatedProducts = allProducts
@@ -256,8 +276,19 @@ const ProductDetailsPage = () => {
                 >
                   <ShoppingBag size={18} className="mr-2" /> ADD TO BAG
                 </button>
-                <button className="flex items-center justify-center w-full border border-gray-300 text-gray-700 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors">
-                  <Heart size={18} className="mr-2" /> WISHLIST
+                 <button
+                  onClick={handleWishlistToggle}
+                  className={`flex items-center justify-center w-full border ${
+                    inWishlist
+                      ? "border-pink-500 bg-pink-50 text-pink-600"
+                      : "border-gray-300 text-gray-700"
+                  } py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors`}
+                >
+                  <Heart
+                    size={18}
+                    className={`mr-2 ${inWishlist ? "fill-pink-500" : ""}`}
+                  />{" "}
+                  {inWishlist ? "IN WISHLIST" : "WISHLIST"}
                 </button>
               </div>
 
