@@ -3,7 +3,7 @@ import { useCart } from "@/context/CartContext";
 import Image from "next/image";
 
 const CheckoutSummary = () => {
-  const { cartItems, cartTotal, itemCount } = useCart();
+  const { cartItems, cartTotal } = useCart();
   const vat = cartTotal * 0.05; // Example 5% VAT
   const total = cartTotal + vat;
 

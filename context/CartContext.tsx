@@ -1,7 +1,13 @@
 // context/CartContext.tsx
 "use client";
 
-import { createContext, useState, useContext, ReactNode, useEffect } from "react";
+import {
+  createContext,
+  useState,
+  useContext,
+  ReactNode,
+  useEffect,
+} from "react";
 import toast from "react-hot-toast";
 
 // Interface গুলো অপরিবর্তিত থাকবে
@@ -18,7 +24,8 @@ interface Variant {
   price: number;
 }
 
-export interface CartItem { // এক্সপোর্ট করা হলো যাতে অন্য ফাইলে ব্যবহার করা যায়
+export interface CartItem {
+  // এক্সপোর্ট করা হলো যাতে অন্য ফাইলে ব্যবহার করা যায়
   product: Product;
   variant: Variant;
   quantity: number;
@@ -76,7 +83,6 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
       return [...prevItems, { product, variant, quantity }];
     });
     setIsCartOpen(true);
-    toast.success(`${product.name} added to cart!`);
   };
 
   const removeFromCart = (variantId: number) => {

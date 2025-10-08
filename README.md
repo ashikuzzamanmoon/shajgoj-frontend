@@ -1,7 +1,11 @@
 # Shajgoj Frontend
+
 This is a frontend clone of the Shajgoj website, built with [Next.js](https://nextjs.org) and [Tailwind CSS](https://tailwindcss.com/). The project showcases the features of a modern e-commerce website, including product browsing, searching, filtering, a shopping cart, and more.
 
+#### Live link: [https://shajgoj.vercel.app](https://shajgoj.vercel.app/)
+
 ## Features
+
 - Homepage: A beautifully designed homepage with an engaging hero slider, promotional banners, and various product categories.
 
 - Product Categories: Browse products by different categories.
@@ -19,49 +23,60 @@ This is a frontend clone of the Shajgoj website, built with [Next.js](https://ne
 - Responsive Design: Fully responsive for mobile, tablet, and desktop devices.
 
 ## Tech Stack
+
 The following technologies were used to build this project:
+
 - Frontend:
 
-    - [Next.js](https://nextjs.org/) (React Framework)
+  - [Next.js](https://nextjs.org/) (React Framework)
 
-    - [React](https://react.dev/)
+  - [React](https://react.dev/)
 
-    - [TypeScript](https://www.typescriptlang.org/)
+  - [TypeScript](https://www.typescriptlang.org/)
 
 - Styling:
 
-    - [Tailwind CSS](https://tailwindcss.com/)
+  - [Tailwind CSS](https://tailwindcss.com/)
 
 - UI Components:
 
-    - [Headless UI](https://headlessui.com/)
+  - [Headless UI](https://headlessui.com/)
 
-    - [Lucide React](https://lucide.dev/) (Icons)
+  - [Lucide React](https://lucide.dev/) (Icons)
 
 - Slider/Carousel:
 
-    - [Embla Carousel](https://www.embla-carousel.com/)
+  - [Embla Carousel](https://www.embla-carousel.com/)
 
 - Notifications:
 
-    - [React Hot Toast](https://react-hot-toast.com/)
+  - [React Hot Toast](https://react-hot-toast.com/)
+
 ## Getting Started
 
 To run this project on your local machine, follow these steps:
 
 ### Prerequisites:
+
 - [Node.js](https://nodejs.org/en) (v18.18.0 or newer)
 - [npm](https://www.npmjs.com/)/[yarn](https://yarnpkg.com/)/[pnpm](https://pnpm.io/)/[bun](https://bun.sh/)
+
 ### Installation:
+
 1. Clone this repository:
+
 ```bash
 git clone https://github.com/ashikuzzamanmoon/shajgoj-frontend.git
 ```
+
 2. Navigate to the project directory:
+
 ```bash
 cd shajgoj-frontend
 ```
+
 3. Install the dependencies:
+
 ```bash
 npm install
 # or
@@ -71,7 +86,9 @@ pnpm install
 # or
 bun install
 ```
+
 4. Run the development server:
+
 ```bash
 npm run dev
 # or
@@ -85,6 +102,7 @@ bun dev
 Now, you can view the project by visiting [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## File Structure
+
 The main folders and files of the project are listed below:
 
 - `/app`: Contains all the routes, pages, and layouts, built using the Next.js App Router.
